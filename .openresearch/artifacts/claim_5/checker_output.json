@@ -1,0 +1,10 @@
+{
+  "claim": 5,
+  "checker": "independent topological dependency graph",
+  "status": "VERIFIED",
+  "tietze_route_complete": true,
+  "stone_weierstrass_route_complete": true,
+  "proper_subset_not_required": true,
+  "nonclosed_domain_control_rejected": true
+}
+

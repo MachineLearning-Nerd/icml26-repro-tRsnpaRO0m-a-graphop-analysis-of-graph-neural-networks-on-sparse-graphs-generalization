@@ -1,0 +1,14 @@
+# Claim 5 source audit
+
+- Paper source SHA-256:
+  `ae8d8f620023d94024494817d799bbd52617d2dd0eca282e29a8cab00e2dc3ca`
+- Theorem M.1, anchor `A13.Thmtheorem1`, quantifies every `L in N0`.
+- Theorem L.2, anchor `A12.Thmtheorem2`, supplies compactness of the realizable
+  DIDM image. Its separate strictness clause is not needed.
+- Theorem E.12 supplies the ambient MPNN algebra, point separation, and density
+  used by the paper.
+
+The paper's displayed proof has type slips (it alternates between functions on
+`H^L`, `P(H^L)`, and the bofop quotient). The reconstructed routes use the
+correct domain `Gamma_L(BF_d^r)` throughout.
+

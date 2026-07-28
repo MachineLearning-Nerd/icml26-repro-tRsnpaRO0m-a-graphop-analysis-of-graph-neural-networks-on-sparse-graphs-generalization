@@ -1,0 +1,18 @@
+{
+  "claim": 1,
+  "controls": [
+    {
+      "id": "asymmetric_positive_matrix",
+      "expected_failure": "self_adjoint",
+      "witness": "<A e2,e1> - <A e1,e2> = 1/2",
+      "result": "REJECTED_AS_INTENDED"
+    },
+    {
+      "id": "symmetric_negative_edge",
+      "expected_failure": "positivity_preserving",
+      "witness": "v=e2>=0 but Av=(-1,0)",
+      "result": "REJECTED_AS_INTENDED"
+    }
+  ]
+}
+

@@ -1,0 +1,31 @@
+{
+  "claim": 1,
+  "verdict": "VERIFIED",
+  "source": {
+    "paper": "arXiv:2602.08785v1",
+    "anchor": "S3.Thmtheorem1",
+    "label": "Definition 3.1"
+  },
+  "statement": {
+    "domain": "P-operators A:L^infinity(Omega)->L^1(Omega) on a Borel probability space",
+    "self_adjoint": "for all bounded measurable u,v, integral (Av)u dmu = integral (Au)v dmu",
+    "positivity_preserving": "for all v>=0 almost everywhere, Av>=0 almost everywhere",
+    "graphop": "self_adjoint and positivity_preserving"
+  },
+  "tested_instances": [
+    "a nonnegative symmetric 3-cell step graphon integral operator",
+    "the sum-aggregation adjacency operator of the sparse path P4"
+  ],
+  "proof_scope": {
+    "finite_atomic_certificate": "Exhaustive over {-1,0,1}^n signal pairs for self-adjointness and {0,1}^n nonnegative signals for positivity.",
+    "general_structural_argument": "For a symmetric nonnegative kernel, exchanging the two finite sums proves adjointness and entrywise nonnegativity proves positivity. The canonical finite-graph construction is the same argument with adjacency entries."
+  },
+  "acceptance": [
+    "all exact adjoint residuals are zero",
+    "all outputs on the complete nonnegative Boolean signal domain are nonnegative",
+    "the exact L-infinity to L1 norm is finite",
+    "an independent checker reaches the same verdict without importing the primary verifier",
+    "asymmetric and negative-entry controls are rejected for their intended reasons"
+  ]
+}
+

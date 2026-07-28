@@ -1,0 +1,10 @@
+{
+  "claim": 6,
+  "checker": "independent binomial mass calculation",
+  "status": "FALSIFIED",
+  "sample_sizes_checked": 9,
+  "odd_sample_sizes_have_sure_infinite_supremum": true,
+  "even_sample_bad_probability_at_least_half": true,
+  "bad_probability_limit": "1",
+  "bounded_offset_control_restores_finite_envelope": true
+}

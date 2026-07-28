@@ -1,0 +1,10 @@
+{
+  "claim": 2,
+  "control": "Af(n)=n f(n), mu(n)=2^-n",
+  "self_adjoint": true,
+  "positivity_preserving": true,
+  "linfinity_to_l1_norm": "2",
+  "fiber_essential_supremum": "infinity",
+  "result": "GRAPHOP_ACCEPTED_BUT_BOFOP_REJECTED_AS_INTENDED"
+}
+

@@ -1,0 +1,7 @@
+{
+  "id": "remove_closedness_needed_by_tietze",
+  "nonclosed_subset": "(0,1) in [0,1]",
+  "target": "x -> 1/x",
+  "extension_route_rejected": true
+}
+

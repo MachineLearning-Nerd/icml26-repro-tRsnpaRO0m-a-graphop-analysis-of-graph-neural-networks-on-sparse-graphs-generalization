@@ -1,0 +1,6 @@
+{
+  "id": "add_uniform_offset_envelope",
+  "added_assumption": "0<=M<=1",
+  "uniform_gap_no_longer_unbounded": true
+}
+
