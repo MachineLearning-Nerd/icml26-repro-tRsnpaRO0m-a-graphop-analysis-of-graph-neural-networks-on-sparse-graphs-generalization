@@ -16,8 +16,10 @@ from pathlib import Path
 
 from graphop_repro.claims.claim1_graphops import verify as verify_claim_1
 from graphop_repro.claims.claim2_bofops import verify as verify_claim_2
+from graphop_repro.claims.claim4_didm_counterexample import verify as verify_claim_4
 from graphop_repro.independent.claim1_checker import check as check_claim_1
 from graphop_repro.independent.claim2_checker import check as check_claim_2
+from graphop_repro.independent.claim4_checker import check as check_claim_4
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -42,6 +44,9 @@ def main() -> int:
     raw_path_2 = ROOT / ".openresearch/artifacts/claim_2/raw_results.json"
     primary_2 = verify_claim_2(raw_path_2)
     independent_2 = check_claim_2(raw_path_2)
+    raw_path_4 = ROOT / ".openresearch/artifacts/claim_4/raw_results.json"
+    primary_4 = verify_claim_4(raw_path_4)
+    independent_4 = check_claim_4(raw_path_4)
 
     expected_checker = json.loads(
         (ROOT / ".openresearch/artifacts/claim_1/checker_output.json").read_text(
@@ -55,6 +60,18 @@ def main() -> int:
         )
     )
     assert independent_2 == expected_checker_2
+    expected_checker_4 = json.loads(
+        (ROOT / ".openresearch/artifacts/claim_4/checker_output.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    assert independent_4 == expected_checker_4
+    expected_control_4 = json.loads(
+        (
+            ROOT / ".openresearch/artifacts/claim_4/negative_control_output.json"
+        ).read_text(encoding="utf-8")
+    )
+    assert primary_4["negative_control"] == expected_control_4
 
     wall_seconds = time.perf_counter() - started
     cpu_seconds = time.process_time() - cpu_started
@@ -94,9 +111,17 @@ def main() -> int:
                 "primary": primary_2,
                 "independent": independent_2,
             },
+            {
+                "claim": 4,
+                "status": primary_4["status"],
+                "primary": primary_4,
+                "independent": independent_4,
+            },
         ],
         "all_claims_accepted": (
-            primary["status"] == "VERIFIED" and primary_2["status"] == "VERIFIED"
+            primary["status"] == "VERIFIED"
+            and primary_2["status"] == "VERIFIED"
+            and primary_4["status"] == "FALSIFIED"
         ),
     }
     print("BEGIN_REPRODUCTION_SUMMARY")
