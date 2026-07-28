@@ -10,7 +10,7 @@ This is the canonical evaluator entrypoint for the cumulative candidate.
 | 2 — bounded fibers | [Exact sparse fibers](pages/claims/claim-2.md) | VERIFIED |
 | 3 — action-metric continuity | [Uniform-constant counterexample](pages/claims/claim-3.md) | FALSIFIED |
 | 4 — bofop-DIDM compactness/properness | [Depth-zero counterexample](pages/claims/claim-4.md) | FALSIFIED |
-| 5 — universal approximation | pending child experiment | BLOCKED |
+| 5 — universal approximation | [Two proof routes](pages/claims/claim-5.md) | VERIFIED |
 | 6 — generalization | pending child experiment | BLOCKED |
 
 ## Historical rejected baseline
