@@ -26,6 +26,7 @@ single-core CPU; every formal run finished in 5 seconds of orchestrated time.
 
 | Branch/experiment | Purpose | Exact run command | Assessment | Compute |
 |---|---|---|---|---|
+| `main` | Publication surface for the report, notebook, verifier, and exact Space payload | Not run as an experiment (publication surface) | mirrors the frozen release candidate | N/A |
 | `orx/frozen-baseline-exact-graphop-definition` | Lock Python 3.12/uv and verify Claim 1 with independent controls | `uv run --frozen python -m graphop_repro.run_all` | Claim 1 VERIFIED | local CPU, single-threaded, 5 s orchestrated |
 | `orx/exact-bounded-fiber-characterization` | Add exact Claim 2 fibers, norm identity, and a graphop/non-bofop control | `uv run --frozen python -m graphop_repro.run_all` | Claim 2 VERIFIED; Claim 1 regression VERIFIED | local CPU, single-threaded, 5 s orchestrated |
 | `orx/corollary-5-3-l-zero-counterexample` | Audit Corollary 5.3's universal depth quantifier with a proof certificate | `uv run --frozen python -m graphop_repro.run_all` | Claim 4 FALSIFIED; prior regressions pass | local CPU, single-threaded, 5 s orchestrated |
