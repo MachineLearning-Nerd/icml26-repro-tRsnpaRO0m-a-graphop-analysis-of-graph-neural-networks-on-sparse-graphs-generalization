@@ -12,5 +12,6 @@ falsified under their formal quantifiers. See the
 | `orx/corollary-5-3-l-zero-counterexample` | Audit Corollary 5.3's universal depth quantifier with a proof certificate | `uv run --frozen python -m graphop_repro.run_all` | pending | local CPU, single-threaded |
 | `orx/theorem-4-1-uniform-constant-counterexample` | Audit the formal `MP_D` class and the claimed uniform constant | `uv run --frozen python -m graphop_repro.run_all` | pending | local CPU, single-threaded |
 | `orx/universal-approximation-proof-reconstruction` | Reconstruct Theorem M.1 by Tietze and Stone-Weierstrass routes | `uv run --frozen python -m graphop_repro.run_all` | pending | local CPU, single-threaded |
+| `orx/formal-mpnn-uniform-generalization-counterexampl` | Test uniform generalization over formal `MP_D` with exact binomial evidence | `uv run --frozen python -m graphop_repro.run_all` | pending | local CPU, single-threaded |
 
 Paper: arXiv `2602.08785`; OpenReview `tRsnpaRO0m`.

@@ -11,7 +11,7 @@ This is the canonical evaluator entrypoint for the cumulative candidate.
 | 3 — action-metric continuity | [Uniform-constant counterexample](pages/claims/claim-3.md) | FALSIFIED |
 | 4 — bofop-DIDM compactness/properness | [Depth-zero counterexample](pages/claims/claim-4.md) | FALSIFIED |
 | 5 — universal approximation | [Two proof routes](pages/claims/claim-5.md) | VERIFIED |
-| 6 — generalization | pending child experiment | BLOCKED |
+| 6 — generalization | [Uniform-risk counterexample](pages/claims/claim-6.md) | FALSIFIED |
 
 ## Historical rejected baseline
 

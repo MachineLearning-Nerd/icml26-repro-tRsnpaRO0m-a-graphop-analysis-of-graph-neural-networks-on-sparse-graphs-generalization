@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "claim": 6,
+  "distribution": {"x0_probability": "1/2", "x1_probability": "1/2"},
+  "inputs": {"x0": "singleton A=0,f=0", "x1": "singleton A=I,f=0", "r": "1"},
+  "label": "single class e1=1",
+  "loss": "|prediction-1|",
+  "model_family": {
+    "phi_0": "x -> M",
+    "phi_1": "(u,v) -> v",
+    "psi": "z -> z",
+    "D": "1",
+    "lipschitz_constants": ["0", "1", "1"],
+    "outputs": {"x0": "0", "x1": "M"}
+  },
+  "sample_sizes": [1, 2, 3, 4, 8, 16, 32, 64, 128],
+  "negative_control": {
+    "id": "add_uniform_offset_envelope",
+    "maximum_M": "1",
+    "expected": "finite uniformly bounded loss envelope"
+  }
+}
+

@@ -19,11 +19,13 @@ from graphop_repro.claims.claim2_bofops import verify as verify_claim_2
 from graphop_repro.claims.claim3_uniform_lipschitz import verify as verify_claim_3
 from graphop_repro.claims.claim4_didm_counterexample import verify as verify_claim_4
 from graphop_repro.claims.claim5_universal_approximation import verify as verify_claim_5
+from graphop_repro.claims.claim6_generalization import verify as verify_claim_6
 from graphop_repro.independent.claim1_checker import check as check_claim_1
 from graphop_repro.independent.claim2_checker import check as check_claim_2
 from graphop_repro.independent.claim3_checker import check as check_claim_3
 from graphop_repro.independent.claim4_checker import check as check_claim_4
 from graphop_repro.independent.claim5_checker import check as check_claim_5
+from graphop_repro.independent.claim6_checker import check as check_claim_6
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -57,6 +59,9 @@ def main() -> int:
     raw_path_5 = ROOT / ".openresearch/artifacts/claim_5/raw_results.json"
     primary_5 = verify_claim_5(raw_path_5)
     independent_5 = check_claim_5(raw_path_5)
+    raw_path_6 = ROOT / ".openresearch/artifacts/claim_6/raw_results.json"
+    primary_6 = verify_claim_6(raw_path_6)
+    independent_6 = check_claim_6(raw_path_6)
 
     expected_checker = json.loads(
         (ROOT / ".openresearch/artifacts/claim_1/checker_output.json").read_text(
@@ -106,6 +111,18 @@ def main() -> int:
         )
     )
     assert primary_5["negative_control"] == expected_control_5
+    expected_checker_6 = json.loads(
+        (ROOT / ".openresearch/artifacts/claim_6/checker_output.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    assert independent_6 == expected_checker_6
+    expected_control_6 = json.loads(
+        (ROOT / ".openresearch/artifacts/claim_6/negative_control_output.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    assert primary_6["negative_control"] == expected_control_6
 
     wall_seconds = time.perf_counter() - started
     cpu_seconds = time.process_time() - cpu_started
@@ -163,6 +180,12 @@ def main() -> int:
                 "primary": primary_5,
                 "independent": independent_5,
             },
+            {
+                "claim": 6,
+                "status": primary_6["status"],
+                "primary": primary_6,
+                "independent": independent_6,
+            },
         ],
         "all_claims_accepted": (
             primary["status"] == "VERIFIED"
@@ -170,6 +193,7 @@ def main() -> int:
             and primary_3["status"] == "FALSIFIED"
             and primary_4["status"] == "FALSIFIED"
             and primary_5["status"] == "VERIFIED"
+            and primary_6["status"] == "FALSIFIED"
         ),
     }
     print("BEGIN_REPRODUCTION_SUMMARY")
