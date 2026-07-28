@@ -15,7 +15,9 @@ import time
 from pathlib import Path
 
 from graphop_repro.claims.claim1_graphops import verify as verify_claim_1
+from graphop_repro.claims.claim2_bofops import verify as verify_claim_2
 from graphop_repro.independent.claim1_checker import check as check_claim_1
+from graphop_repro.independent.claim2_checker import check as check_claim_2
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -37,6 +39,9 @@ def main() -> int:
     raw_path = ROOT / ".openresearch/artifacts/claim_1/raw_results.json"
     primary = verify_claim_1(raw_path)
     independent = check_claim_1(raw_path)
+    raw_path_2 = ROOT / ".openresearch/artifacts/claim_2/raw_results.json"
+    primary_2 = verify_claim_2(raw_path_2)
+    independent_2 = check_claim_2(raw_path_2)
 
     expected_checker = json.loads(
         (ROOT / ".openresearch/artifacts/claim_1/checker_output.json").read_text(
@@ -44,6 +49,12 @@ def main() -> int:
         )
     )
     assert independent == expected_checker
+    expected_checker_2 = json.loads(
+        (ROOT / ".openresearch/artifacts/claim_2/checker_output.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    assert independent_2 == expected_checker_2
 
     wall_seconds = time.perf_counter() - started
     cpu_seconds = time.process_time() - cpu_started
@@ -76,9 +87,17 @@ def main() -> int:
                 "status": primary["status"],
                 "primary": primary,
                 "independent": independent,
-            }
+            },
+            {
+                "claim": 2,
+                "status": primary_2["status"],
+                "primary": primary_2,
+                "independent": independent_2,
+            },
         ],
-        "all_claims_accepted": primary["status"] == "VERIFIED",
+        "all_claims_accepted": (
+            primary["status"] == "VERIFIED" and primary_2["status"] == "VERIFIED"
+        ),
     }
     print("BEGIN_REPRODUCTION_SUMMARY")
     print(json.dumps(summary, indent=2, sort_keys=True))
@@ -88,4 +107,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-
