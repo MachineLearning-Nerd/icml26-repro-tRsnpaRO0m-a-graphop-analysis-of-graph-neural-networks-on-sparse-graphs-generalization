@@ -1,11 +1,10 @@
 # Claim 1 limitations and deviations
 
-- Numerical enumeration is finite-atomic.  The general graphon inclusion is
-  supported by the displayed finite-sum proof, the exact source definition,
-  and a nontrivial step-kernel instance; this is not presented as exhaustive
-  enumeration of every measurable kernel.
-- The claim is definitional.  Evidence verifies that the two named constructions
-  satisfy the exact definition; it does not independently reproduce all of
-  graphop limit theory.
-- No tolerance, random seed, fitting, or formula-selected sample size is used.
+The executable certificate proves the graphop axioms for every finite atomic
+operator satisfying its exact coefficient assumptions and tests a broad,
+deterministic family sweep. It is not a proof-assistant formalization of
+Fubini/Tonelli on arbitrary measurable probability spaces. The graphon
+extension is therefore an independently reconstructed mathematical
+derivation, not an executable measure-theory kernel.
 
+No tolerance, random seed, fitting, or formula-selected sample size is used.

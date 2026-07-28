@@ -127,6 +127,11 @@ def main() -> int:
     wall_seconds = time.perf_counter() - started
     cpu_seconds = time.process_time() - cpu_started
     usage = resource.getrusage(resource.RUSAGE_SELF)
+    affinity_count = (
+        len(os.sched_getaffinity(0))
+        if hasattr(os, "sched_getaffinity")
+        else os.cpu_count()
+    )
     summary = {
         "schema_version": 1,
         "paper": "arXiv:2602.08785v1",
@@ -138,12 +143,20 @@ def main() -> int:
             "uv_lock_present": (ROOT / "uv.lock").is_file(),
         },
         "compute": {
-            "backend": os.environ.get("ORX_BACKEND", "local (reported by run contract)"),
+            "backend": os.environ.get("ORX_BACKEND", "reported by orx run record"),
+            "selected_backend": "hf",
+            "selected_flavor": "cpu-upgrade",
+            "selection_reason": (
+                "Runtime after adding graph-family sweeps was uncertain; "
+                "campaign policy therefore requires Hugging Face cpu-upgrade."
+            ),
             "estimated_cores": 1,
             "implementation_max_threads": 1,
             "host_logical_cpus": os.cpu_count(),
+            "actual_affinity_cpus": affinity_count,
             "actual_allocation_note": (
-                "Local backend is not cgroup-limited; verifier is single-threaded."
+                "The job records host and affinity CPU counts; verifier code "
+                "is single-threaded."
             ),
             "wall_seconds": round(wall_seconds, 6),
             "process_cpu_seconds": round(cpu_seconds, 6),
