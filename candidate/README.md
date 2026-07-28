@@ -8,7 +8,7 @@ This is the canonical evaluator entrypoint for the cumulative candidate.
 |---|---|---|
 | 1 — graphop definition | [Exact graphop axioms](pages/claims/claim-1.md) | VERIFIED |
 | 2 — bounded fibers | [Exact sparse fibers](pages/claims/claim-2.md) | VERIFIED |
-| 3 — action-metric continuity | pending child experiment | BLOCKED |
+| 3 — action-metric continuity | [Uniform-constant counterexample](pages/claims/claim-3.md) | FALSIFIED |
 | 4 — bofop-DIDM compactness/properness | [Depth-zero counterexample](pages/claims/claim-4.md) | FALSIFIED |
 | 5 — universal approximation | pending child experiment | BLOCKED |
 | 6 — generalization | pending child experiment | BLOCKED |

@@ -16,9 +16,11 @@ from pathlib import Path
 
 from graphop_repro.claims.claim1_graphops import verify as verify_claim_1
 from graphop_repro.claims.claim2_bofops import verify as verify_claim_2
+from graphop_repro.claims.claim3_uniform_lipschitz import verify as verify_claim_3
 from graphop_repro.claims.claim4_didm_counterexample import verify as verify_claim_4
 from graphop_repro.independent.claim1_checker import check as check_claim_1
 from graphop_repro.independent.claim2_checker import check as check_claim_2
+from graphop_repro.independent.claim3_checker import check as check_claim_3
 from graphop_repro.independent.claim4_checker import check as check_claim_4
 
 
@@ -44,6 +46,9 @@ def main() -> int:
     raw_path_2 = ROOT / ".openresearch/artifacts/claim_2/raw_results.json"
     primary_2 = verify_claim_2(raw_path_2)
     independent_2 = check_claim_2(raw_path_2)
+    raw_path_3 = ROOT / ".openresearch/artifacts/claim_3/raw_results.json"
+    primary_3 = verify_claim_3(raw_path_3)
+    independent_3 = check_claim_3(raw_path_3)
     raw_path_4 = ROOT / ".openresearch/artifacts/claim_4/raw_results.json"
     primary_4 = verify_claim_4(raw_path_4)
     independent_4 = check_claim_4(raw_path_4)
@@ -60,6 +65,18 @@ def main() -> int:
         )
     )
     assert independent_2 == expected_checker_2
+    expected_checker_3 = json.loads(
+        (ROOT / ".openresearch/artifacts/claim_3/checker_output.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    assert independent_3 == expected_checker_3
+    expected_control_3 = json.loads(
+        (
+            ROOT / ".openresearch/artifacts/claim_3/negative_control_output.json"
+        ).read_text(encoding="utf-8")
+    )
+    assert primary_3["negative_control"] == expected_control_3
     expected_checker_4 = json.loads(
         (ROOT / ".openresearch/artifacts/claim_4/checker_output.json").read_text(
             encoding="utf-8"
@@ -112,6 +129,12 @@ def main() -> int:
                 "independent": independent_2,
             },
             {
+                "claim": 3,
+                "status": primary_3["status"],
+                "primary": primary_3,
+                "independent": independent_3,
+            },
+            {
                 "claim": 4,
                 "status": primary_4["status"],
                 "primary": primary_4,
@@ -121,6 +144,7 @@ def main() -> int:
         "all_claims_accepted": (
             primary["status"] == "VERIFIED"
             and primary_2["status"] == "VERIFIED"
+            and primary_3["status"] == "FALSIFIED"
             and primary_4["status"] == "FALSIFIED"
         ),
     }

@@ -1,0 +1,19 @@
+{
+  "claim": 3,
+  "checker": "independent singleton-operator and geometric-series derivation",
+  "status": "FALSIFIED",
+  "assumptions": {
+    "A1_self_adjoint_positive": true,
+    "A2_self_adjoint_positive": true,
+    "both_norms_at_most_r": true,
+    "model_lipschitz_bound": true,
+    "offset_unrestricted_by_formal_definition": true
+  },
+  "input_action_metric_upper_bound": "8",
+  "output_gap_formula": "M",
+  "adversarial_choice": "M=8*C+1",
+  "finite_constant_sweep_checks": 8,
+  "range_bound_mutation_rejected": true,
+  "interpretation_risk": "Paper prose calls hidden states [-1,1]-valued, but the formal MP_D definition imposes no range or offset constraint."
+}
+
