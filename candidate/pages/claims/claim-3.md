@@ -52,3 +52,18 @@ uv run --frozen python -m graphop_repro.run_all
 The cumulative verifier exits nonzero if any input assumption, model-class
 membership, symbolic inequality, checker, or control changes.
 
+## Provenance
+
+- Scientific Git SHA: `fda190bf3cfcbcb8ed52b5858b6b32f8567e711e`
+- Formal run: `c846596c-1b82-4e60-84d6-66b300c26744`
+- Compute: one local CPU core; `cpu-upgrade` flavor not applicable
+- Runtime: 5 s orchestrated; verifier wall/process `0.236605/0.229570` s
+- Seeds: none; the witness and symbolic inequalities are deterministic
+- Environment: [pyproject.toml](../../../pyproject.toml) and
+  [uv.lock](../../../uv.lock)
+
+## Visibility matrix
+
+| Claim | Canonical page | Code visible | Data inline | Raw link | Checker | Control | Exact claim tested | Reviewer verdict |
+|---|---|---|---|---|---|---|---|---|
+| 3 | this page | yes | yes | yes | yes | yes | yes | FALSIFIED |

@@ -1,0 +1,21 @@
+{
+  "dataset": "ICML-2026-agent-repro/verdicts",
+  "dataset_revision": "1011185ba75e55480455dd44042ae65432f65cde",
+  "dataset_file_sha256": "470902e334497b1f4e42c9cd8b06ce939a984567f2aa8446b9aa4fe5cfe584aa",
+  "filter": {
+    "field": "space_id",
+    "equals": "DineshAI/tRsnpaRO0m",
+    "matches": 1
+  },
+  "record": {
+    "space_id": "DineshAI/tRsnpaRO0m",
+    "orid": "tRsnpaRO0m",
+    "paper_title": "A Graphop Analysis of Graph Neural Networks on Sparse Graphs: Generalization and Universal Approximation",
+    "sha": "9ded82baa88100f73731decd32ad0895120ae8ba",
+    "judged_at": "2026-07-28T15:47:58+00:00",
+    "model": "zai-org/GLM-5.2",
+    "quality": "low",
+    "overall": "The logbook consists solely of a summary table with one-line assertions for each claim, with no visible code, experimental protocols, numerical data, or methodological detail. None of the six claims are supported by concrete experimental evidence; all are backed only by unsupported self-reported verdicts."
+  }
+}
+

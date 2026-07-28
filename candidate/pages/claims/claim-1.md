@@ -37,9 +37,18 @@ The verifier exits nonzero if either construction misses an axiom, if an exact
 number changes, if the independent output disagrees, or if a negative control
 passes.
 
+## Provenance
+
+- Scientific Git SHA: `e917ce09434918d243aac50d7e8a0cca960ef12a`
+- Formal run: `ee300364-c697-4086-9663-c4a33434159e`
+- Compute: one local CPU core; `cpu-upgrade` flavor not applicable
+- Runtime: 5 s orchestrated; verifier wall/process `0.256224/0.230265` s
+- Seeds: none; enumeration and rational arithmetic are deterministic
+- Environment: [pyproject.toml](../../../pyproject.toml) and
+  [uv.lock](../../../uv.lock)
+
 ## Visibility matrix
 
 | Claim | Canonical page | Code visible | Data inline | Raw link | Checker | Control | Exact claim tested | Reviewer verdict |
 |---|---|---|---|---|---|---|---|---|
 | 1 | this page | yes | yes | yes | yes | yes | yes | VERIFIED |
-

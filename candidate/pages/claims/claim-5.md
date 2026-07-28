@@ -19,6 +19,8 @@ Neither route uses Corollary 5.3's false strict-subset clause. A control replace
 the compact image by the nonclosed subset `(0,1)` and target `1/x`; the
 extension route is correctly rejected.
 
+## Reproduce and inspect
+
 ```text
 uv run --frozen python -m graphop_repro.run_all
 ```
@@ -33,3 +35,22 @@ uv run --frozen python -m graphop_repro.run_all
 - [Method](../../../.openresearch/artifacts/claim_5/method.md)
 - [Limitations](../../../.openresearch/artifacts/claim_5/limitations.md)
 
+The verifier exits nonzero if either proof route loses a premise, if the two
+independent dependency audits disagree, or if the nonclosed-subset control
+passes.
+
+## Provenance
+
+- Scientific Git SHA: `7fedf31515dd84fb9152980b2bd6c6a59b4bfa8b`
+- Formal run: `45e8f034-b4ac-48db-8656-db623cbdcf4b`
+- Compute: one local CPU core; `cpu-upgrade` flavor not applicable
+- Runtime: 5 s orchestrated; verifier wall/process `0.261619/0.255072` s
+- Seeds: none; both proof dependency graphs are deterministic
+- Environment: [pyproject.toml](../../../pyproject.toml) and
+  [uv.lock](../../../uv.lock)
+
+## Visibility matrix
+
+| Claim | Canonical page | Code visible | Data inline | Raw link | Checker | Control | Exact claim tested | Reviewer verdict |
+|---|---|---|---|---|---|---|---|---|
+| 5 | this page | yes | yes | yes | yes | yes | yes | VERIFIED |

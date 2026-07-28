@@ -45,3 +45,18 @@ uv run --frozen python -m graphop_repro.run_all
 The cumulative verifier exits nonzero on any identity, norm, checker, or control
 failure.
 
+## Provenance
+
+- Scientific Git SHA: `3ab9369d0a464b55d36db546f005819a0b54acf0`
+- Formal run: `1445490d-0fb2-4913-9174-43cf88467c06`
+- Compute: one local CPU core; `cpu-upgrade` flavor not applicable
+- Runtime: 5 s orchestrated; verifier wall/process `0.233641/0.229816` s
+- Seeds: none; enumeration and rational arithmetic are deterministic
+- Environment: [pyproject.toml](../../../pyproject.toml) and
+  [uv.lock](../../../uv.lock)
+
+## Visibility matrix
+
+| Claim | Canonical page | Code visible | Data inline | Raw link | Checker | Control | Exact claim tested | Reviewer verdict |
+|---|---|---|---|---|---|---|---|---|
+| 2 | this page | yes | yes | yes | yes | yes | yes | VERIFIED |

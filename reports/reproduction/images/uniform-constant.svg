@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="500" viewBox="0 0 1200 500" role="img" aria-labelledby="title desc">
+  <title id="title">Counterexample to the uniform output constant</title>
+  <desc id="desc">Fixed input distance at most eight and output gap M defeats any constant C by choosing M equal to eight C plus one.</desc>
+  <rect width="1200" height="500" fill="#fbfbf8"/>
+  <text x="55" y="58" font-family="sans-serif" font-size="32" font-weight="700" fill="#17212b">The formal class bounds slopes—but not offsets</text>
+  <rect x="60" y="105" width="310" height="255" rx="18" fill="#edf2f7" stroke="#60758a" stroke-width="2"/>
+  <text x="90" y="150" font-family="sans-serif" font-size="22" font-weight="700" fill="#33485c">Fixed valid inputs</text>
+  <text x="90" y="195" font-family="monospace" font-size="20" fill="#33485c">x₀: A=0, f=0</text>
+  <text x="90" y="233" font-family="monospace" font-size="20" fill="#33485c">x₁: A=I, f=0</text>
+  <text x="90" y="286" font-family="monospace" font-size="20" fill="#33485c">d_M(x₀,x₁) ≤ 8</text>
+  <text x="90" y="328" font-family="sans-serif" font-size="17" fill="#536779">L=D=r=1</text>
+  <path d="M390 230 H500" stroke="#445566" stroke-width="4" marker-end="url(#arrow)"/>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#445566"/></marker></defs>
+  <rect x="515" y="105" width="310" height="255" rx="18" fill="#fff1d6" stroke="#b27b16" stroke-width="2"/>
+  <text x="545" y="150" font-family="sans-serif" font-size="22" font-weight="700" fill="#7d5511">Admissible MPNN</text>
+  <text x="545" y="195" font-family="monospace" font-size="20" fill="#7d5511">φ₀(x)=M</text>
+  <text x="545" y="233" font-family="monospace" font-size="20" fill="#7d5511">φ₁(u,v)=v</text>
+  <text x="545" y="271" font-family="monospace" font-size="20" fill="#7d5511">ψ(z)=z</text>
+  <text x="545" y="318" font-family="sans-serif" font-size="17" fill="#735d31">Lipschitz: 0, 1, 1</text>
+  <path d="M845 230 H950" stroke="#9b3023" stroke-width="4" marker-end="url(#arrowRed)"/>
+  <defs><marker id="arrowRed" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#9b3023"/></marker></defs>
+  <rect x="965" y="105" width="180" height="255" rx="18" fill="#fde2dd" stroke="#b43b2b" stroke-width="3"/>
+  <text x="1055" y="155" text-anchor="middle" font-family="sans-serif" font-size="21" font-weight="700" fill="#7e281e">Output gap</text>
+  <text x="1055" y="235" text-anchor="middle" font-family="monospace" font-size="48" font-weight="700" fill="#7e281e">M</text>
+  <text x="1055" y="295" text-anchor="middle" font-family="sans-serif" font-size="17" fill="#66352e">unbounded</text>
+  <text x="60" y="424" font-family="monospace" font-size="25" fill="#7e281e">For any finite C: choose M = 8C + 1  ⇒  M &gt; C·d_M</text>
+  <text x="60" y="460" font-family="sans-serif" font-size="17" fill="#455565">Control: adding |φ₀(0)|≤1 rejects this witness. Interpretation risk: prose mentions [-1,1] states,</text>
+  <text x="60" y="486" font-family="sans-serif" font-size="17" fill="#455565">but the formal MP_D definition does not impose that range.</text>
+</svg>

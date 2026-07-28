@@ -26,6 +26,8 @@ This does not challenge the standard result for a truly fixed Hölder class
 with a common envelope. Adding `0<=M<=1` is the negative control and removes
 the unbounded gap.
 
+## Reproduce and inspect
+
 ```text
 uv run --frozen python -m graphop_repro.run_all
 ```
@@ -40,3 +42,22 @@ uv run --frozen python -m graphop_repro.run_all
 - [Method](../../../.openresearch/artifacts/claim_6/method.md)
 - [Limitations](../../../.openresearch/artifacts/claim_6/limitations.md)
 
+The verifier exits nonzero if a model/input assumption fails, if any exact
+binomial probability differs, if the independent derivation disagrees, or if
+the bounded-envelope control fails.
+
+## Provenance
+
+- Scientific Git SHA: `93f05e7c614dbb1fd964458d6b95ca9f38fe4b01`
+- Formal run: `bc615e3c-ac90-478e-ab2e-947548f6a405`
+- Compute: one local CPU core; `cpu-upgrade` flavor not applicable
+- Runtime: 5 s orchestrated; verifier wall/process `0.232468/0.231447` s
+- Seeds: none; binomial enumeration and symbolic algebra are deterministic
+- Environment: [pyproject.toml](../../../pyproject.toml) and
+  [uv.lock](../../../uv.lock)
+
+## Visibility matrix
+
+| Claim | Canonical page | Code visible | Data inline | Raw link | Checker | Control | Exact claim tested | Reviewer verdict |
+|---|---|---|---|---|---|---|---|---|
+| 6 | this page | yes | yes | yes | yes | yes | yes | FALSIFIED |

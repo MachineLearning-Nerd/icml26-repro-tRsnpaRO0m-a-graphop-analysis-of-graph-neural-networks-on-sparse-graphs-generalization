@@ -54,3 +54,18 @@ uv run --frozen python -m graphop_repro.run_all
 The cumulative verifier exits nonzero if any assumption, derivation, checker,
 or control changes.
 
+## Provenance
+
+- Scientific Git SHA: `5dfb2d3b4bbf28572910d199f54cf276b12b3c7d`
+- Formal run: `ee7f63fb-06bf-4cc7-923e-af98986cb332`
+- Compute: one local CPU core; `cpu-upgrade` flavor not applicable
+- Runtime: 5 s orchestrated; verifier wall/process `0.244421/0.241344` s
+- Seeds: none; the universal construction and finite sanity grid are deterministic
+- Environment: [pyproject.toml](../../../pyproject.toml) and
+  [uv.lock](../../../uv.lock)
+
+## Visibility matrix
+
+| Claim | Canonical page | Code visible | Data inline | Raw link | Checker | Control | Exact claim tested | Reviewer verdict |
+|---|---|---|---|---|---|---|---|---|
+| 4 | this page | yes | yes | yes | yes | yes | yes | FALSIFIED |

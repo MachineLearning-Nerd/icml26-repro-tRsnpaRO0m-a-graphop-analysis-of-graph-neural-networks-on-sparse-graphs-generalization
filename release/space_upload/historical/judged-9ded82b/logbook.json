@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "title": "Graphop Analysis of GNNs (tRsnpaRO0m)",
+  "emoji": "🎯",
+  "space_id": "DineshAI/tRsnpaRO0m",
+  "paper": null,
+  "tags": [
+    "icml2026-repro",
+    "paper-tRsnpaRO0m"
+  ],
+  "updated_at": "2026-07-28T15:19:27+00:00",
+  "root": {
+    "slug": "index",
+    "title": "Graphop Analysis of GNNs (tRsnpaRO0m)",
+    "file": "pages/index.md",
+    "children": [
+      {
+        "slug": "overview",
+        "title": "overview",
+        "file": "pages/overview/page.md",
+        "children": []
+      }
+    ]
+  },
+  "agent_view_tokens": 331,
+  "revision": "1785251967410553321"
+}
