@@ -1,0 +1,36 @@
+{
+  "claim": 1,
+  "checker": "weighted-matrix criterion (independent module)",
+  "status": "VERIFIED",
+  "cases": [
+    {
+      "id": "dense_three_cell_step_graphon",
+      "weighted_symmetry_cells_checked": 9,
+      "nonnegative_cells_checked": 9,
+      "self_adjoint": true,
+      "positivity_preserving": true,
+      "graphop": true
+    },
+    {
+      "id": "sparse_path_p4_sum_aggregation",
+      "weighted_symmetry_cells_checked": 16,
+      "nonnegative_cells_checked": 16,
+      "self_adjoint": true,
+      "positivity_preserving": true,
+      "graphop": true
+    }
+  ],
+  "negative_controls": [
+    {
+      "id": "asymmetric_positive_matrix",
+      "expected_failure": "self_adjoint",
+      "detected": true
+    },
+    {
+      "id": "symmetric_negative_edge",
+      "expected_failure": "positivity_preserving",
+      "detected": true
+    }
+  ]
+}
+
