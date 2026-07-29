@@ -46,6 +46,10 @@ orx/evaluator-visible-release-candidate
   `ec550a0b0f162cb0076dcb04ebf3ede3fbe621e4`
 - General proof HF run:
   `84623c95-d792-4b59-8a50-1305c04929ca`
+- Evaluator-visible release commit:
+  `6088b759eef56d04ae7c295d2a5dcb53ca4f6868`
+- Evaluator-visible release HF run:
+  `bc69e18c-a2fd-412a-b8d5-99388fc4f317`
 - Exact fixed command everywhere:
   `uv run --frozen python -m graphop_repro.run_all`
 

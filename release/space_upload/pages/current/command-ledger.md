@@ -146,10 +146,15 @@ orx exp wait ca863604-4d71-4388-8afc-96c155a97aa3 --interval 10 --timeout 480
 orx logs 84623c95-d792-4b59-8a50-1305c04929ca --bytes 1000000
 
 orx create-experiment 2ffa28c7-b71a-4b21-889f-cfa977b5bd92 --title 'Evaluator-visible general-proof release' --parent ca863604-4d71-4388-8afc-96c155a97aa3
+orx exp run c41f9014-837c-4a6e-9ed5-dc4dc9e871c9 --backend hf --flavor cpu-upgrade --image ghcr.io/astral-sh/uv:python3.12-bookworm-slim --timeout 1h
+orx exp wait c41f9014-837c-4a6e-9ed5-dc4dc9e871c9 --interval 10 --timeout 480
+orx logs bc69e18c-a2fd-412a-b8d5-99388fc4f317 --bytes 1000000
 ```
 
 The exact verdict filter returned one record and 9/12. The judged Space
 download passed 358/358 published manifest hashes. The formal general-proof
 run used one active verifier core on a 64-CPU `cpu-upgrade` allocation and
 reported `7.058492` wall seconds, `7.057538` process seconds, and
-`all_claims_accepted=true`.
+`all_claims_accepted=true`. The evaluator-visible release rerun independently
+reported `7.084995/7.083411` wall/process seconds and the same accepted
+result.
