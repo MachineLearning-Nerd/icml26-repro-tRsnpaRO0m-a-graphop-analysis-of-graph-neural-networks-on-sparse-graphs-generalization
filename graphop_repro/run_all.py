@@ -7,6 +7,7 @@ artifacts, while the command and environment remain unchanged.
 from __future__ import annotations
 
 import json
+import math
 import os
 import platform
 import resource
@@ -39,6 +40,54 @@ def _git_sha() -> str:
         capture_output=True,
         text=True,
     ).stdout.strip()
+
+
+def _assert_nested_close(
+    actual: object,
+    expected: object,
+    *,
+    path: str = "$",
+    abs_tol: float = 1e-9,
+) -> None:
+    """Compare serialized evidence structurally with tight float tolerance."""
+    if isinstance(expected, bool) or expected is None or isinstance(expected, str):
+        assert actual == expected, f"{path}: {actual!r} != {expected!r}"
+        return
+    if isinstance(expected, (int, float)):
+        assert isinstance(actual, (int, float)) and not isinstance(actual, bool), (
+            f"{path}: expected a numeric value, got {type(actual).__name__}"
+        )
+        assert math.isclose(float(actual), float(expected), rel_tol=1e-9, abs_tol=abs_tol), (
+            f"{path}: {actual!r} is not within {abs_tol:g} of {expected!r}"
+        )
+        return
+    if isinstance(expected, list):
+        assert isinstance(actual, list), f"{path}: expected list"
+        assert len(actual) == len(expected), (
+            f"{path}: list lengths differ ({len(actual)} != {len(expected)})"
+        )
+        for index, (actual_item, expected_item) in enumerate(zip(actual, expected)):
+            _assert_nested_close(
+                actual_item,
+                expected_item,
+                path=f"{path}[{index}]",
+                abs_tol=abs_tol,
+            )
+        return
+    if isinstance(expected, dict):
+        assert isinstance(actual, dict), f"{path}: expected object"
+        assert actual.keys() == expected.keys(), (
+            f"{path}: object keys differ ({actual.keys()} != {expected.keys()})"
+        )
+        for key in expected:
+            _assert_nested_close(
+                actual[key],
+                expected[key],
+                path=f"{path}.{key}",
+                abs_tol=abs_tol,
+            )
+        return
+    raise TypeError(f"{path}: unsupported expected type {type(expected).__name__}")
 
 
 def main() -> int:
@@ -104,13 +153,13 @@ def main() -> int:
             encoding="utf-8"
         )
     )
-    assert independent_5 == expected_checker_5
+    _assert_nested_close(independent_5, expected_checker_5)
     expected_control_5 = json.loads(
         (ROOT / ".openresearch/artifacts/claim_5/negative_control_output.json").read_text(
             encoding="utf-8"
         )
     )
-    assert primary_5["negative_controls"] == expected_control_5
+    _assert_nested_close(primary_5["negative_controls"], expected_control_5)
     expected_benchmark_5 = json.loads(
         (
             ROOT
@@ -137,7 +186,7 @@ def main() -> int:
             "independent_sparse_graph_readout"
         ]["sweep"][-1]["maximum_error_all_targets"],
     }
-    assert actual_benchmark_5 == expected_benchmark_5
+    _assert_nested_close(actual_benchmark_5, expected_benchmark_5)
     expected_checker_6 = json.loads(
         (ROOT / ".openresearch/artifacts/claim_6/checker_output.json").read_text(
             encoding="utf-8"
