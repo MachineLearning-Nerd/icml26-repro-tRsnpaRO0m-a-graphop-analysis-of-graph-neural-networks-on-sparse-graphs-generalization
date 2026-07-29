@@ -1,10 +1,16 @@
 # Claim 5 limitations and deviations
 
-- This is a proof reconstruction, not a finite approximation demo.
-- It depends on the paper's earlier ambient MPNN algebra/separation theorem
-  (Theorem E.12), which is explicitly exposed as a premise.
-- The proof repairs domain-typing slips in the displayed Theorem M.1 proof but
-  does not change the theorem statement.
-- Approximation is on the DIDM pseudometric quotient, as continuous functions
-  must be constant on zero-distance equivalence classes.
-
+- Finite experiments cannot prove a theorem quantified over every continuous
+  target on the full bofop-DIDM quotient. The general verdict still depends on
+  the source theorem E.12 and the compactness clause of L.2.
+- The constructive continuum is proof-level for its weighted-cycle subfamily,
+  not for all sparse graphops.
+- The trained benchmark uses three declared continuous targets, five graph
+  families, and at most 512 vertices. It is substantial corroboration, not a
+  replacement for the topological proof.
+- The readout functions are polynomial or piecewise linear. Both are
+  continuous and Lipschitz on the compact embedding range and therefore lie
+  within the paper's abstract MPNN function class; they are not restricted to
+  a particular ReLU software library.
+- Approximation is on the DIDM pseudometric quotient, so targets are constant
+  on zero-distance equivalence classes.

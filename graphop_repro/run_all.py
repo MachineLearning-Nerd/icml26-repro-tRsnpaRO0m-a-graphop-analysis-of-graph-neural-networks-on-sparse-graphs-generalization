@@ -110,7 +110,34 @@ def main() -> int:
             encoding="utf-8"
         )
     )
-    assert primary_5["negative_control"] == expected_control_5
+    assert primary_5["negative_controls"] == expected_control_5
+    expected_benchmark_5 = json.loads(
+        (
+            ROOT
+            / ".openresearch/artifacts/claim_5/benchmark_expected_results.json"
+        ).read_text(encoding="utf-8")
+    )
+    actual_benchmark_5 = {
+        "selected_degree": primary_5["benchmark"]["selected_degree"],
+        "selected_readout_width": primary_5["benchmark"]["selected_readout_width"],
+        "train_rows": primary_5["benchmark"]["train_rows"],
+        "validation_rows": primary_5["benchmark"]["validation_rows"],
+        "test_rows": primary_5["benchmark"]["test_rows"],
+        "held_out_test": primary_5["benchmark"]["held_out_test"],
+        "continuum_first_knot_count": primary_5[
+            "constructive_continuum_certificate"
+        ]["first_knot_count_meeting_threshold"],
+        "continuum_final_maximum_error": primary_5[
+            "constructive_continuum_certificate"
+        ]["sweep"][-1]["maximum_error_all_targets"],
+        "independent_first_knot_count": independent_5[
+            "independent_sparse_graph_readout"
+        ]["first_knot_count_meeting_threshold"],
+        "independent_final_maximum_error": independent_5[
+            "independent_sparse_graph_readout"
+        ]["sweep"][-1]["maximum_error_all_targets"],
+    }
+    assert actual_benchmark_5 == expected_benchmark_5
     expected_checker_6 = json.loads(
         (ROOT / ".openresearch/artifacts/claim_6/checker_output.json").read_text(
             encoding="utf-8"
