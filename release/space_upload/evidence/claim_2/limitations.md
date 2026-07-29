@@ -1,10 +1,11 @@
 # Claim 2 limitations and deviations
 
-The certificate covers every finite atomic probability space and includes an
-exact countable counter-control. It does not formalize the measurable-kernel
-existence theorem on every uncountable Borel probability space. The campaign
-therefore distinguishes the fully parameterized finite sparse-graph result
-from the remaining measure-theoretic representation step.
+The general certificate exposes rather than eliminates its standard
+measure-theory trust boundary: Caratheodory extension, disintegration on
+standard Borel spaces, monotone classes, and L1/Linf duality. It is a
+machine-checked symbolic derivation, not a foundational formalization of those
+lemmas. The uncountable circle graphing directly checks the intended sparse,
+singular setting.
 
 The historical `bound<=1` remains rejected. The theorem requires a finite
 bound, and the faithful sparse sum-aggregation example has bound `2`.

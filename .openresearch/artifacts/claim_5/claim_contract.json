@@ -12,12 +12,15 @@
     "model": "the paper's MPNN class with continuous Lipschitz updates and readout"
   },
   "evidence_routes": [
-    "source-anchored Tietze restriction of the ambient Theorem E.12, using only Theorem L.2 compactness and not its false strict-subset clause",
+    "independent induction proving MPNN observables separate all order-L DIDM points, followed by algebra closure and real Stone-Weierstrass; neither Theorem E.12 nor M.1 is assumed",
+    "historical source-anchored Tietze restriction retained only as a regression route",
     "constructive uniform interpolation for every continuous target on a continuum of bounded-fiber weighted sparse cycles",
     "actual L=2 MPNN embeddings and trained readouts on held-out bounded-fiber sparse graphs from five families",
     "an independent piecewise-linear readout construction that imports no primary verifier code"
   ],
   "acceptance": [
+    "two independent proof kernels derive the full for-every-L, target, and epsilon conclusion",
+    "removing Riesz separation, recursive MPNN separation, algebra closure, or Stone-Weierstrass makes the general certificate fail",
     "the held-out maximum error for all three continuous targets is at most 0.04",
     "the continuum target sweep reaches maximum error at most 0.01",
     "the independent readout reaches the same 0.04 threshold",

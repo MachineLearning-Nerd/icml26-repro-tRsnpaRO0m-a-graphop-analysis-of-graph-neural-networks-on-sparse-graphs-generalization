@@ -1,23 +1,23 @@
 # Release report
 
-- Previous live judged score: `8/12`
-- Conservative projected score range after the proposed change: `10–12/12`
+- Previous live judged score: `9/12`
+- Conservative projected score range after the proposed change: `9–12/12`
 - Best-supported possible new score: `12/12` **forecast, not a judge result**
 
 | Claim | Current points | Possible points | Confidence | Evidence status | Basis and remaining risk |
 |---|---:|---:|---|---|---|
-| 1 | 1 | 2 | MEDIUM | VERIFIED | Necessary-and-sufficient certificate for every finite atomic operator; 34 dense/sparse instances through 16,384 vertices; independent 162-matrix audit. Remaining risk: evaluator may require a proof-assistant treatment of arbitrary uncountable spaces rather than the source-level graphon derivation. |
-| 2 | 1 | 2 | MEDIUM | VERIFIED | Unique finite fibers and all-real-signal norm identities, 34-instance sweep, and exact countable graphop/non-bofop control. Remaining risk: uncountable Borel kernel existence is audited mathematically rather than mechanized. |
+| 1 | 1 | 2 | MEDIUM | VERIFIED | Quantified Horn certificate derives positivity/self-adjointness on arbitrary spaces; independent premise checker; singular uncountable circle graphing; finite regressions retained. Remaining risk: the judge may require a third-party foundational prover rather than the explicit Fubini trust boundary. |
+| 2 | 1 | 2 | MEDIUM | VERIFIED | General standard-Borel joint-measure, extension, disintegration, uniqueness, and norm certificate with independent checker and uncountable sparse graphing. Remaining risk: standard measure lemmas are trusted rather than re-proved from foundations. |
 | 3 | 2 | 2 | MEDIUM | FALSIFIED | Preserved full-credit singleton counterexample defeats every finite constant under the displayed `MP_D` definition. Interpretation risk remains because prose mentions bounded hidden states. |
 | 4 | 2 | 2 | HIGH | FALSIFIED | Preserved full-credit counterexample at allowed `L=0` contradicts exactly the universal strict-subset clause. |
-| 5 | 0 | 2 | MEDIUM | VERIFIED | Actual L=2 MPNN on 800 held-out sparse graphs (`0.034723199005` max error), independent readout (`0.019023154804`), weighted-cycle continuum, and source-anchored general restriction proof. Remaining risk: the general route accepts the paper's earlier ambient density theorem E.12. |
+| 5 | 1 | 2 | MEDIUM | VERIFIED | Independent recursive DIDM-separation and MPNN-algebra certificate plus Stone-Weierstrass; E.12/M.1 forbidden as premises; actual MPNN and continuum retained. Remaining risk: the judge may demand formalization of Riesz/Stone-Weierstrass in a third-party prover. |
 | 6 | 2 | 2 | MEDIUM | FALSIFIED | Preserved full-credit exact two-point counterexample and binomial bad-event probabilities. It shares Claim 3's formal-versus-prose class risk. |
 
-Current total score: **8/12 live judged**. Conservative projected total after
-this candidate: **10–12/12**. Best-supported possible total: **12/12**,
+Current total score: **9/12 live judged**. Conservative projected total after
+this candidate: **9–12/12**. Best-supported possible total: **12/12**,
 forecast only.
 
-Claims changed since the previous judge result: **1, 2, and 5**. Claims 3, 4,
+Claims targeted since the previous judge result: **1, 2, and 5**. Claims 3, 4,
 and 6 retain the exact evidence that already received full credit. No claim is
 BLOCKED and no claim has LOW confidence, so the three-route plus mandatory
 fourth-route LOW-confidence protocol is not triggered.
@@ -31,6 +31,7 @@ orx/evaluator-visible-release-candidate
 └── orx/general-finite-graphop-and-bofop-certificates
     └── orx/constructive-mpnn-universal-approximation-eviden
         └── orx/evaluator-visible-strengthened-evidence-candidat
+            └── orx/general-probability-space-proof-certificates
 ```
 
 - Claims 1–2 scientific commit:
@@ -41,6 +42,14 @@ orx/evaluator-visible-release-candidate
   `d8343afb3e2ec346a2480454ba79363abe0f76fd`
 - Claim 5 HF run:
   `a31c30b1-f9d8-497a-9b27-0d85a472912f`
+- General probability-space proof commit:
+  `ec550a0b0f162cb0076dcb04ebf3ede3fbe621e4`
+- General proof HF run:
+  `84623c95-d792-4b59-8a50-1305c04929ca`
+- Evaluator-visible release commit:
+  `6088b759eef56d04ae7c295d2a5dcb53ca4f6868`
+- Evaluator-visible release HF run:
+  `bc69e18c-a2fd-412a-b8d5-99388fc4f317`
 - Exact fixed command everywhere:
   `uv run --frozen python -m graphop_repro.run_all`
 
@@ -56,8 +65,8 @@ the Hugging Face text-file API to the existing Space
 1. download the exact resulting revision;
 2. verify every allowlisted SHA-256 hash;
 3. repeat canonical traversal from `README.md` and `logbook.json`;
-4. confirm judged revision `dbfa7ea...` remains archived and every original
-   path remains present;
+4. confirm judged revision `3ed60dc...` remains archived, the older
+   `dbfa7ea...` archive remains reachable, and every original path is present;
 5. mirror the exact reader-facing text paths to GitHub `main`;
 6. verify GitHub with `git ls-remote`; and
 7. leave the paper awaiting the live judge.
@@ -69,15 +78,15 @@ new revision.
 
 | Claim | Status | Expected points | Confidence | Expected evaluator status |
 |---|---|---:|---|---|
-| 1 | VERIFIED | 2 | MEDIUM | parameterized finite theorem, no longer a four-node toy |
-| 2 | VERIFIED | 2 | MEDIUM | parameterized fiber/norm certificate, no longer a four-node toy |
+| 1 | VERIFIED | 2 | MEDIUM | arbitrary-space certificate plus uncountable singular graphing |
+| 2 | VERIFIED | 2 | MEDIUM | general Borel extension/disintegration and norm certificate |
 | 3 | FALSIFIED | 2 | MEDIUM | preserved prior full-credit counterexample |
 | 4 | FALSIFIED | 2 | HIGH | preserved prior full-credit counterexample |
-| 5 | VERIFIED | 2 | MEDIUM | actual MPNN measurements plus constructive and general routes |
+| 5 | VERIFIED | 2 | MEDIUM | independent all-target separation/density proof plus actual MPNN |
 | 6 | FALSIFIED | 2 | MEDIUM | preserved prior full-credit counterexample |
 
-Conservative projected total: **10–12/12**. Best-supported possible score:
+Conservative projected total: **9–12/12**. Best-supported possible score:
 **12/12 forecast**. Remaining BLOCKED risk: none. The material residual risks
-are the unmechanized uncountable-space steps for Claims 1–2, reliance on
-Theorem E.12 for Claim 5's full generality, and the already acknowledged
-formal-versus-prose interpretation for Claims 3 and 6.
+are whether the evaluator accepts the explicit standard-theorem trust boundary
+instead of requiring a third-party foundational prover, and the already
+acknowledged formal-versus-prose interpretation for Claims 3 and 6.

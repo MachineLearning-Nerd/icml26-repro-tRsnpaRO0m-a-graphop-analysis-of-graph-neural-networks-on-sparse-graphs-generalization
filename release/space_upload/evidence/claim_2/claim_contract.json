@@ -11,11 +11,15 @@
     "converse": "A bounded fiber family whose induced operator is symmetric defines a bofop."
   },
   "proof_scope": {
+    "general_standard_Borel_certificate": "Construct the joint measure from the positive bilinear form, extend it, disintegrate it on the standard Borel space, prove uniqueness with a countable generator, and derive both norms from positivity and duality without assuming Theorem 3.3.",
     "finite_atomic_certificate": "For every finite n, positive probability vector mu, and nonnegative matrix A satisfying detailed balance, nu_i({j})=A_ij is the unique fiber family and the three exact norms all equal max_i sum_j A_ij.",
     "uniqueness": "Testing the representation on every atom indicator e_j identifies every fiber atom, so no finite signal-grid assumption is used.",
     "scaling": "The same certificate is exercised on 34 dense and sparse instances through 16,384 vertices, including nonuniform reversible measures."
   },
   "acceptance": [
+    "both proof kernels derive the arbitrary-standard-Borel target from the enumerated foundation lemmas",
+    "deleting extension, disintegration, uniqueness, the positive-kernel norm, or duality makes the certificate fail",
+    "the uncountable circle graphing has measurable singular two-point fibers with exact mass one",
     "derive every fiber and its uniqueness from the atom-indicator basis",
     "check the fiber integral identity for every real signal by coefficient equality",
     "independently recompute both induced norms and the essential supremum across six graph families",

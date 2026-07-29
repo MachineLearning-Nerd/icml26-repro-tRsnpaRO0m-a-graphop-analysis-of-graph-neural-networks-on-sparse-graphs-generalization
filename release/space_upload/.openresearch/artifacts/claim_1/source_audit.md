@@ -28,5 +28,8 @@ for every finite dimension, not a selected finite signal grid.
 For a bounded measurable symmetric nonnegative graphon kernel, the same
 identity is the Fubini/Tonelli exchange
 `integral integral W(x,y) v(y) u(x) dmu(y)dmu(x)` with `x,y` swapped.
-The executable finite certificate tests step kernels and sparse graph
-operators; it does not claim to formalize measure theory.
+The current general certificate encodes this quantified derivation and
+independently audits the premise graph. It also constructs the uncountable
+singular circle graphing with two atomic neighbors per point. Its explicit
+trusted boundary is standard integration theory rather than the paper's
+result.

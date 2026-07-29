@@ -1,8 +1,10 @@
 # Claim 5 limitations and deviations
 
 - Finite experiments cannot prove a theorem quantified over every continuous
-  target on the full bofop-DIDM quotient. The general verdict still depends on
-  the source theorem E.12 and the compactness clause of L.2.
+  target on the full bofop-DIDM quotient. The general verdict instead uses a
+  machine-checked symbolic derivation whose trusted mathematical boundary is
+  Riesz representation, compactness of the realizable DIDM image, and real
+  Stone-Weierstrass. It does not assume Theorem E.12 or M.1.
 - The constructive continuum is proof-level for its weighted-cycle subfamily,
   not for all sparse graphops.
 - The trained benchmark uses three declared continuous targets, five graph

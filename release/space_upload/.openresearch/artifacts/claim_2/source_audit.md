@@ -22,3 +22,10 @@ Detailed balance converts the second expression into the `j`-th row sum, so
 both norms equal the essential supremum of the fiber masses. This
 parameterized derivation covers every finite sparse weighted graph satisfying
 the paper's symmetry assumption.
+
+The current general certificate no longer stops there. On an arbitrary
+standard Borel probability space it reconstructs the representing joint
+measure and its disintegration from standard extension and kernel theorems,
+then proves the representation, uniqueness up to one null set, and the two
+norm identities. The paper's Theorem 3.3 is the target and is not admitted as
+a foundation lemma.

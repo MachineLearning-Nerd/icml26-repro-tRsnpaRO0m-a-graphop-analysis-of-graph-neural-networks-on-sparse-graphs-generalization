@@ -1,0 +1,16 @@
+{
+  "all_steps_reachable": true,
+  "allowed_foundation_sources_only": true,
+  "checker": "independent premise-graph reachability and trust-boundary audit",
+  "claim": 1,
+  "essential_lemmas_used": [
+    "fubini_bilinear",
+    "graphop_definition",
+    "positive_integral",
+    "symmetric_swap"
+  ],
+  "paper_result_not_assumed": true,
+  "quantifiers": "For every probability space (Omega,mu), every jointly measurable symmetric nonnegative kernel W for which the displayed integral operator is bounded L-infinity to L-one, and every bounded measurable test pair u,v",
+  "step_count": 4,
+  "target_derived": true
+}

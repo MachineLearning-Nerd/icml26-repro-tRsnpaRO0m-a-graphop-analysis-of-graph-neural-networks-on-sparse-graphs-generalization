@@ -1,0 +1,17 @@
+{
+  "all_steps_reachable": true,
+  "allowed_foundation_sources_only": true,
+  "checker": "independent premise-graph reachability and trust-boundary audit",
+  "claim": 2,
+  "essential_lemmas_used": [
+    "caratheodory_extension",
+    "kernel_uniqueness",
+    "positive_kernel_Linf_norm",
+    "standard_Borel_disintegration",
+    "symmetric_dual_norm"
+  ],
+  "paper_result_not_assumed": true,
+  "quantifiers": "For every standard Borel probability space (Omega,mu), every positivity-preserving self-adjoint graphop A that is bounded L-infinity to L-infinity and L-one to L-one, with all identities understood up to mu-null sets",
+  "step_count": 9,
+  "target_derived": true
+}

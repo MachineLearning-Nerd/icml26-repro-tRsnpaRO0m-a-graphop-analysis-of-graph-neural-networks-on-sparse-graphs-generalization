@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="500" viewBox="0 0 1200 500" role="img" aria-labelledby="title desc">
+  <title id="title">Evidence added after the live eight-out-of-twelve judgment</title>
+  <desc id="desc">Claims one and two move from four-node examples to parameterized certificates, while Claim five gains actual held-out MPNN measurements.</desc>
+  <rect width="1200" height="500" fill="#f7f7f2"/>
+  <text x="60" y="62" font-family="sans-serif" font-size="34" font-weight="700" fill="#17212b">What changed after the live 8/12 judgment</text>
+  <text x="60" y="102" font-family="sans-serif" font-size="19" fill="#455565">Current score: 8/12 · projected: 10–12/12 · only a future judge can change the score</text>
+  <g font-family="sans-serif">
+    <rect x="60" y="145" width="330" height="255" rx="18" fill="#e8f0fa" stroke="#3b6ea8" stroke-width="3"/>
+    <text x="90" y="188" font-size="22" font-weight="700" fill="#244f80">CLAIMS 1–2 · formerly TOY</text>
+    <text x="90" y="235" font-size="54" font-weight="700" fill="#244f80">34</text>
+    <text x="195" y="235" font-size="21" fill="#244f80">graph instances</text>
+    <text x="90" y="278" font-size="21" fill="#244f80">up to 16,384 vertices</text>
+    <text x="90" y="315" font-size="21" fill="#244f80">448,593,904 cells certified</text>
+    <text x="90" y="362" font-size="18" fill="#455565">all-dimensional finite theorem</text>
+    <rect x="435" y="145" width="330" height="255" rx="18" fill="#e7f3ea" stroke="#37855b" stroke-width="3"/>
+    <text x="465" y="188" font-size="22" font-weight="700" fill="#215f40">CLAIM 5 · formerly 0/2</text>
+    <text x="465" y="235" font-size="54" font-weight="700" fill="#215f40">800</text>
+    <text x="575" y="235" font-size="21" fill="#215f40">held-out graphs</text>
+    <text x="465" y="278" font-size="21" fill="#215f40">max error 0.034723</text>
+    <text x="465" y="315" font-size="21" fill="#215f40">independent error 0.019023</text>
+    <text x="465" y="362" font-size="18" fill="#455565">actual L=2 MPNN + continuum</text>
+    <rect x="810" y="145" width="330" height="255" rx="18" fill="#f3ede2" stroke="#9a6d2f" stroke-width="3"/>
+    <text x="840" y="188" font-size="22" font-weight="700" fill="#76501f">CLAIMS 3, 4, 6</text>
+    <text x="840" y="235" font-size="54" font-weight="700" fill="#76501f">6/6</text>
+    <text x="970" y="235" font-size="21" fill="#76501f">points retained</text>
+    <text x="840" y="278" font-size="21" fill="#76501f">formal counterexamples</text>
+    <text x="840" y="315" font-size="21" fill="#76501f">cumulative regressions pass</text>
+    <text x="840" y="362" font-size="18" fill="#455565">historical evidence preserved</text>
+  </g>
+  <text x="60" y="455" font-family="sans-serif" font-size="18" fill="#455565">All new formal runs: Hugging Face cpu-upgrade, verifier single-threaded, fixed uv command.</text>
+</svg>

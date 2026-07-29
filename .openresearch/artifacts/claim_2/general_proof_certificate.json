@@ -1,0 +1,195 @@
+{
+  "schema_version": 1,
+  "claim": 2,
+  "theorem": "General Borel-space fiber representation and norm identity",
+  "quantifiers": "For every standard Borel probability space (Omega,mu), every positivity-preserving self-adjoint graphop A that is bounded L-infinity to L-infinity and L-one to L-one, with all identities understood up to mu-null sets",
+  "hypotheses": [
+    "standard_Borel_probability(Omega,mu)",
+    "positivity_preserving(A)",
+    "self_adjoint(A)",
+    "bounded_Linf_to_L1(A)",
+    "bounded_Linf_to_Linf(A)",
+    "bounded_L1_to_L1(A)"
+  ],
+  "trusted_foundation": [
+    {
+      "id": "positive_rectangle_premeasure",
+      "premises": [
+        "positivity_preserving(A)",
+        "bounded_Linf_to_L1(A)"
+      ],
+      "conclusion": "finite_positive_rectangle_premeasure(lambda_A)",
+      "statement": "lambda_A(S x T)=integral 1_S A1_T dmu is a bounded positive countably additive rectangle premeasure; monotone convergence supplies countable additivity.",
+      "source": "Standard: monotone convergence and extension of positive bilinear forms"
+    },
+    {
+      "id": "caratheodory_extension",
+      "premises": [
+        "finite_positive_rectangle_premeasure(lambda_A)"
+      ],
+      "conclusion": "finite_Borel_measure(lambda_A,Omega_squared)",
+      "statement": "A finite positive rectangle premeasure extends uniquely to the product sigma algebra.",
+      "source": "Bogachev, Measure Theory: Caratheodory extension theorem"
+    },
+    {
+      "id": "adjoint_gives_symmetry",
+      "premises": [
+        "finite_Borel_measure(lambda_A,Omega_squared)",
+        "self_adjoint(A)"
+      ],
+      "conclusion": "symmetric_joint_measure(lambda_A)",
+      "statement": "Self-adjointness makes lambda_A(S x T)=lambda_A(T x S) on rectangles; uniqueness of extension gives symmetry on the product sigma algebra.",
+      "source": "Standard: pi-lambda uniqueness for finite measures"
+    },
+    {
+      "id": "standard_Borel_disintegration",
+      "premises": [
+        "standard_Borel_probability(Omega,mu)",
+        "finite_Borel_measure(lambda_A,Omega_squared)",
+        "bounded_Linf_to_Linf(A)"
+      ],
+      "conclusion": "measurable_finite_kernel(nu_x)",
+      "statement": "Disintegration of lambda_A with respect to mu gives a measurable finite kernel x maps to nu_x; the L-infinity bound makes its mass essentially bounded.",
+      "source": "Kallenberg, Foundations of Modern Probability: disintegration on Borel spaces"
+    },
+    {
+      "id": "indicator_to_all_bounded",
+      "premises": [
+        "measurable_finite_kernel(nu_x)",
+        "finite_positive_rectangle_premeasure(lambda_A)"
+      ],
+      "conclusion": "A_f_equals_integral_f_dnu_x_for_all_bounded_f",
+      "statement": "The identity holds for indicators by construction, for simple functions by linearity, and for every bounded measurable f by monotone-class approximation.",
+      "source": "Standard: functional monotone class theorem"
+    },
+    {
+      "id": "kernel_uniqueness",
+      "premises": [
+        "standard_Borel_probability(Omega,mu)",
+        "A_f_equals_integral_f_dnu_x_for_all_bounded_f"
+      ],
+      "conclusion": "fiber_kernel_unique_mu_ae",
+      "statement": "A countable generating pi-system for a standard Borel space identifies two kernels simultaneously outside one null set, then the pi-lambda theorem identifies all Borel sets.",
+      "source": "Kallenberg, Foundations of Modern Probability: uniqueness of kernels on Borel spaces"
+    },
+    {
+      "id": "positive_kernel_Linf_norm",
+      "premises": [
+        "A_f_equals_integral_f_dnu_x_for_all_bounded_f",
+        "bounded_Linf_to_Linf(A)"
+      ],
+      "conclusion": "norm_Linf_equals_esssup_fiber_mass",
+      "statement": "Positivity gives |Af|<=A1 for ||f||infinity<=1, while f=1 attains A1(x)=nu_x(Omega); hence the norm is ess sup_x nu_x(Omega).",
+      "source": "Standard: norm of a positive kernel operator on L-infinity"
+    },
+    {
+      "id": "symmetric_dual_norm",
+      "premises": [
+        "self_adjoint(A)",
+        "norm_Linf_equals_esssup_fiber_mass",
+        "bounded_L1_to_L1(A)"
+      ],
+      "conclusion": "norm_L1_equals_norm_Linf_equals_esssup_fiber_mass",
+      "statement": "L-one/L-infinity duality and self-adjointness identify the two induced norms; the preceding positive-kernel calculation identifies both with the essential supremum.",
+      "source": "Rudin, Functional Analysis: L-one/L-infinity duality for bounded operators"
+    },
+    {
+      "id": "assemble_fiber_theorem",
+      "premises": [
+        "symmetric_joint_measure(lambda_A)",
+        "A_f_equals_integral_f_dnu_x_for_all_bounded_f",
+        "fiber_kernel_unique_mu_ae",
+        "norm_L1_equals_norm_Linf_equals_esssup_fiber_mass"
+      ],
+      "conclusion": "general_bofop_fiber_theorem(A,nu_x)",
+      "statement": "The symmetric joint measure, measurable unique fibers, representation for all bounded signals, and exact common norm are precisely the forward content of the fiber theorem.",
+      "source": "Definition in arXiv:2602.08785v1: bofop terminology; conclusion reconstructed from the listed standard lemmas"
+    }
+  ],
+  "steps": [
+    {
+      "lemma": "positive_rectangle_premeasure",
+      "premises": [
+        "positivity_preserving(A)",
+        "bounded_Linf_to_L1(A)"
+      ],
+      "conclusion": "finite_positive_rectangle_premeasure(lambda_A)"
+    },
+    {
+      "lemma": "caratheodory_extension",
+      "premises": [
+        "finite_positive_rectangle_premeasure(lambda_A)"
+      ],
+      "conclusion": "finite_Borel_measure(lambda_A,Omega_squared)"
+    },
+    {
+      "lemma": "adjoint_gives_symmetry",
+      "premises": [
+        "finite_Borel_measure(lambda_A,Omega_squared)",
+        "self_adjoint(A)"
+      ],
+      "conclusion": "symmetric_joint_measure(lambda_A)"
+    },
+    {
+      "lemma": "standard_Borel_disintegration",
+      "premises": [
+        "standard_Borel_probability(Omega,mu)",
+        "finite_Borel_measure(lambda_A,Omega_squared)",
+        "bounded_Linf_to_Linf(A)"
+      ],
+      "conclusion": "measurable_finite_kernel(nu_x)"
+    },
+    {
+      "lemma": "indicator_to_all_bounded",
+      "premises": [
+        "measurable_finite_kernel(nu_x)",
+        "finite_positive_rectangle_premeasure(lambda_A)"
+      ],
+      "conclusion": "A_f_equals_integral_f_dnu_x_for_all_bounded_f"
+    },
+    {
+      "lemma": "kernel_uniqueness",
+      "premises": [
+        "standard_Borel_probability(Omega,mu)",
+        "A_f_equals_integral_f_dnu_x_for_all_bounded_f"
+      ],
+      "conclusion": "fiber_kernel_unique_mu_ae"
+    },
+    {
+      "lemma": "positive_kernel_Linf_norm",
+      "premises": [
+        "A_f_equals_integral_f_dnu_x_for_all_bounded_f",
+        "bounded_Linf_to_Linf(A)"
+      ],
+      "conclusion": "norm_Linf_equals_esssup_fiber_mass"
+    },
+    {
+      "lemma": "symmetric_dual_norm",
+      "premises": [
+        "self_adjoint(A)",
+        "norm_Linf_equals_esssup_fiber_mass",
+        "bounded_L1_to_L1(A)"
+      ],
+      "conclusion": "norm_L1_equals_norm_Linf_equals_esssup_fiber_mass"
+    },
+    {
+      "lemma": "assemble_fiber_theorem",
+      "premises": [
+        "symmetric_joint_measure(lambda_A)",
+        "A_f_equals_integral_f_dnu_x_for_all_bounded_f",
+        "fiber_kernel_unique_mu_ae",
+        "norm_L1_equals_norm_Linf_equals_esssup_fiber_mass"
+      ],
+      "conclusion": "general_bofop_fiber_theorem(A,nu_x)"
+    }
+  ],
+  "target": "general_bofop_fiber_theorem(A,nu_x)",
+  "essential_lemmas": [
+    "caratheodory_extension",
+    "standard_Borel_disintegration",
+    "kernel_uniqueness",
+    "positive_kernel_Linf_norm",
+    "symmetric_dual_norm"
+  ],
+  "limitations": "The trusted boundary is standard measure theory: extension, disintegration on standard Borel spaces, monotone classes, and Lp duality. Unlike the previous finite certificate, the derivation quantifies arbitrary standard Borel probability spaces and null-set equivalence."
+}

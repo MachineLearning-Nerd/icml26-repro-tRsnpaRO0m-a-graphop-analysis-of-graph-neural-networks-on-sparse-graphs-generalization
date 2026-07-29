@@ -12,6 +12,7 @@ from graphop_repro.finite_atomic import (
     finite_atomic_certificate,
     run_family_sweeps,
 )
+from graphop_repro.general_certificates import verify_general_claim
 
 
 def _fraction(value: str) -> Fraction:
@@ -159,6 +160,7 @@ def verify(raw_path: Path) -> dict[str, Any]:
     controls = [_verify_control(control) for control in raw["negative_controls"]]
     certificate = finite_atomic_certificate()
     family_sweeps = run_family_sweeps(raw["family_sweeps"])
+    general = verify_general_claim(1)
     assert all(case["graphop"] for case in cases)
     assert all(control["detected"] for control in controls)
     assert certificate["machine_checked"]
@@ -168,6 +170,7 @@ def verify(raw_path: Path) -> dict[str, Any]:
         "status": "VERIFIED",
         "arithmetic": "fractions.Fraction (exact rational)",
         "scope": "parameterized finite-atomic theorem plus graph-family sweeps",
+        "general_probability_space_certificate": general,
         "finite_atomic_necessary_and_sufficient_certificate": certificate,
         "family_sweeps": family_sweeps,
         "cases": cases,

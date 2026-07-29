@@ -1,0 +1,21 @@
+{
+  "claim": 2,
+  "verdict": "VERIFIED",
+  "source": {
+    "paper": "arXiv:2602.08785v1",
+    "anchor": "S3.Thmtheorem3",
+    "label": "Theorem 3.3"
+  },
+  "statement": {
+    "forward": "Every bofop has a unique measurable fiber family with (Af)(x)=integral f dnu_x and ||A||infinity->infinity=||A||1->1=ess sup_x nu_x(Omega)<infinity.",
+    "converse": "A bounded fiber family whose induced operator is symmetric defines a bofop."
+  },
+  "acceptance": [
+    "construct every fiber of a concrete sparse graph",
+    "exhaustively check the fiber integral identity",
+    "independently recompute both induced norms and the essential supremum",
+    "reject a self-adjoint positive graphop with genuinely unbounded fibers"
+  ],
+  "anchor_correction": "The judge summary says Definition 3.1; the fiber theorem is Theorem 3.3."
+}
+

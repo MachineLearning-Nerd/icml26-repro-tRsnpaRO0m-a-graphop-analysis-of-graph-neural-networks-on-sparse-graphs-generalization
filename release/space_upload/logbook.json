@@ -8,7 +8,7 @@
     "icml2026-repro",
     "paper-tRsnpaRO0m"
   ],
-  "updated_at": "2026-07-29T06:00:00+05:30",
+  "updated_at": "2026-07-29T07:00:00+05:30",
   "root": {
     "slug": "current",
     "title": "Current verification — 3 VERIFIED, 3 FALSIFIED",
@@ -66,6 +66,12 @@
         "slug": "command-ledger",
         "title": "Command ledger",
         "file": "pages/current/command-ledger.md",
+        "children": []
+      },
+      {
+        "slug": "historical-judged-9-of-12",
+        "title": "Historical judged 9/12 revision — superseded",
+        "file": "historical/judged-3ed60dc/INDEX.md",
         "children": []
       },
       {

@@ -1,0 +1,13 @@
+{
+  "claim": 4,
+  "checker": "independent quantifier reconstruction and stars-and-bars audit",
+  "status": "FALSIFIED",
+  "quantified_depth_includes_zero": true,
+  "zero_operator_is_bofop_for_all_positive_r": true,
+  "arbitrary_probability_measure_realized": true,
+  "finite_grid_probability_measures": 15,
+  "depth_one_mutation_rejected": true,
+  "conclusion": "Gamma_0(BF_d^r)=P(H0), not a strict subset",
+  "compactness_clause_untouched": true
+}
+

@@ -12,11 +12,12 @@ The paper's displayed proof has type slips (it alternates between functions on
 `H^L`, `P(H^L)`, and the bofop quotient). The reconstructed routes use the
 correct domain `Gamma_L(BF_d^r)` throughout.
 
-The current checker no longer reads asserted Boolean premises. It validates
-the exact source anchors and reconstructs the quantified restriction argument:
-compactness makes the realizable image closed in the metric ambient DIDM
-space, Tietze extends an arbitrary continuous target, Theorem E.12 supplies an
-ambient approximating MPNN, and restriction preserves the uniform error.
+The former checker validated a Tietze restriction route but still accepted
+Theorem E.12. The current general certificate supersedes that route. It
+reconstructs DIDM point separation by induction from the recursive
+definitions, proves the MPNN uniform closure is a unital algebra, and applies
+real Stone-Weierstrass. Theorem E.12 and M.1 are forbidden as foundation
+sources by the independent checker.
 
 The experimental route fixes `L=2`, `d=1`, and `r=1`. Every generated finite
 graph is an undirected weighted sparse graph with maximum fiber mass at most
