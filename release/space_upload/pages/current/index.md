@@ -45,11 +45,11 @@ uv run --frozen python -m graphop_repro.run_all
 - [Command ledger](command-ledger.md)
 
 The environment is Python `>=3.12,<3.13`, resolved by `uv.lock`, with no
-third-party runtime dependencies. Strengthened Claims 1–2 ran on Hugging Face
-`cpu-upgrade` in `26 s` orchestrated (`6.441582 s` verifier wall); the
-cumulative Claim 5 suite ran there in `21 s` (`6.909086 s` verifier wall).
-Both jobs allocated 64 logical/affinity CPUs, but the implementation is
-single-threaded and the pre-run active-core estimate was one.
+third-party runtime dependencies. The current quantified cumulative suite ran
+on Hugging Face `cpu-upgrade` in about `22 s` orchestrated
+(`7.058492/7.057538 s` verifier wall/process). The job allocated 64
+logical/affinity CPUs, but the implementation is single-threaded and the
+pre-run active-core estimate was one.
 
 ## Evaluator visibility matrix
 

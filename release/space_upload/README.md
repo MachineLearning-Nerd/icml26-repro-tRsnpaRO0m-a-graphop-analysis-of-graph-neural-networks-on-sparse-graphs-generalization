@@ -38,5 +38,5 @@ Current scientific verdicts remain **3 VERIFIED and 3 FALSIFIED**. A
 conservative post-change forecast is **9–12/12**, with **12/12** the
 best-supported possibility—not a judge result.
 
-Both the original 0/12 baseline and the exact judged 8/12 revision remain
+The original 0/12 baseline and exact judged 8/12 and 9/12 revisions remain
 reachable as explicitly superseded historical evidence.

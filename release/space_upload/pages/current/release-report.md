@@ -42,6 +42,10 @@ orx/evaluator-visible-release-candidate
   `d8343afb3e2ec346a2480454ba79363abe0f76fd`
 - Claim 5 HF run:
   `a31c30b1-f9d8-497a-9b27-0d85a472912f`
+- General probability-space proof commit:
+  `ec550a0b0f162cb0076dcb04ebf3ede3fbe621e4`
+- General proof HF run:
+  `84623c95-d792-4b59-8a50-1305c04929ca`
 - Exact fixed command everywhere:
   `uv run --frozen python -m graphop_repro.run_all`
 
@@ -57,8 +61,8 @@ the Hugging Face text-file API to the existing Space
 1. download the exact resulting revision;
 2. verify every allowlisted SHA-256 hash;
 3. repeat canonical traversal from `README.md` and `logbook.json`;
-4. confirm judged revision `dbfa7ea...` remains archived and every original
-   path remains present;
+4. confirm judged revision `3ed60dc...` remains archived, the older
+   `dbfa7ea...` archive remains reachable, and every original path is present;
 5. mirror the exact reader-facing text paths to GitHub `main`;
 6. verify GitHub with `git ls-remote`; and
 7. leave the paper awaiting the live judge.

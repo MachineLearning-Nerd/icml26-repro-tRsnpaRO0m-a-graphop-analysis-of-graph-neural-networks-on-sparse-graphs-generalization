@@ -10,4 +10,7 @@ linked first from the top-level README and `pages/current/index.md`; this
 archive is preserved only as historical evidence.
 
 The source tree was downloaded at the exact revision before candidate edits.
-`protected-sha256-manifest.txt` covers all 370 original non-cache files.
+`protected-sha256-manifest.txt` covers all 367 original non-cache text files.
+The three already-present top-level PNG assets remain untouched in the Space;
+their exact paths and hashes are recorded in `protected-binary-assets.txt`
+because publication is restricted to the text-only API.

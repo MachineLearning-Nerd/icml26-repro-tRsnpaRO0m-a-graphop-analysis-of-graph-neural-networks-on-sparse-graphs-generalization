@@ -131,3 +131,25 @@ The low-level read-only file inspections (`rg`, `sed`, `find`, `file`,
 `git diff`, `git status`, `git show`, `git ls-remote`) do not alter scientific
 evidence; their relevant outputs are captured in the source audit, protected
 manifest, visibility matrix, and blind-review page.
+
+## General proofs after the live 9/12 verdict
+
+```text
+curl -fsSL -A 'OpenResearch-Reproduction/1.0' https://huggingface.co/datasets/ICML-2026-agent-repro/verdicts/resolve/e7f9453b90343c8d000ff631b551a10a8853eb27/verdicts.json
+jq '[.[] | select(.space_id == "DineshAI/tRsnpaRO0m")]'
+hf download DineshAI/tRsnpaRO0m --repo-type space --revision 3ed60dc4ac62b111cb7ca0ef7c752586a10aa8b5 --include '*' --local-dir <fresh-directory> --max-workers 1 --force-download
+shasum -a 256 -c sha256-manifest.txt
+
+orx create-experiment 2ffa28c7-b71a-4b21-889f-cfa977b5bd92 --title 'General probability-space proof certificates' --parent c54ecbca-6c19-4734-99da-7a4a5fb709a2
+orx exp run ca863604-4d71-4388-8afc-96c155a97aa3 --backend hf --flavor cpu-upgrade --image ghcr.io/astral-sh/uv:python3.12-bookworm-slim --timeout 1h
+orx exp wait ca863604-4d71-4388-8afc-96c155a97aa3 --interval 10 --timeout 480
+orx logs 84623c95-d792-4b59-8a50-1305c04929ca --bytes 1000000
+
+orx create-experiment 2ffa28c7-b71a-4b21-889f-cfa977b5bd92 --title 'Evaluator-visible general-proof release' --parent ca863604-4d71-4388-8afc-96c155a97aa3
+```
+
+The exact verdict filter returned one record and 9/12. The judged Space
+download passed 358/358 published manifest hashes. The formal general-proof
+run used one active verifier core on a 64-CPU `cpu-upgrade` allocation and
+reported `7.058492` wall seconds, `7.057538` process seconds, and
+`all_claims_accepted=true`.

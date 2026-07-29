@@ -3,7 +3,7 @@
 The review began in a fresh empty directory containing only:
 
 1. the exact judged Space revision
-   `dbfa7ea0de058ad35fa8bab58684306bd9ac7e7c`; and
+   `3ed60dc4ac62b111cb7ca0ef7c752586a10aa8b5`; and
 2. the proposed text-file overlay.
 
 The reviewer used only `README.md`, `logbook.json`, pages reachable from their
@@ -30,18 +30,19 @@ Result: **PASS**.
 
 - Canonical start: `README.md` → `logbook.json` →
   `pages/current/index.md`
-- Canonical files opened: `163`
-- Candidate text files scanned: `366`
-- Exact judged paths checked: `182`
+- Canonical files opened: `174`
+- Candidate text files scanned: `757`
+- Exact judged paths checked: `370`
 - Judged-path subset: **PASS**
 - Broken links: `0`
 - Secret scan: **PASS**
 - Navigation digest:
-  `d14ab0ade2bfd400771bdd3db29fa63cf826099633df3cb4a6f4b6211f509a27`
+  `0e4c3729be69e5b975f1cd89d672eef59149972dee09f99e01bd6c4d1d621ef8`
 
 The reviewer found the current cumulative verifier at
 `graphop_repro/run_all.py` without assistance. Claims 1, 2, and 5 expose the
-new verifier first; the old 8/12 versions are reachable only under
+new general proof kernel first; the old 9/12 versions are reachable only under
+**Historical judged 9/12 revision — superseded** and the older versions under
 **Historical judged 8/12 revision — superseded**. The older 0/12 overview
 remains under **Historical rejected baseline**.
 
@@ -49,11 +50,11 @@ remains under **Historical rejected baseline**.
 
 | Claim | Exact contract found | Executable evidence found | Control found | Blind conclusion |
 |---|---|---|---|---|
-| 1 | yes | parameterized finite theorem, 34-instance sweep, independent 162-matrix audit | asymmetric-positive and symmetric-negative mutations | VERIFIED at finite-atomic scope; uncountable extension limitation visible |
-| 2 | yes | unique-fiber/all-real-signal proof and norm sweep | exact countable graphop/non-bofop separator | VERIFIED at finite/countable scope; uncountable kernel limitation visible |
+| 1 | yes | arbitrary-space Horn derivation, independent trust audit, uncountable singular graphing, finite regressions | essential-lemma deletions and directed shift | VERIFIED under explicit standard Fubini trust boundary |
+| 2 | yes | arbitrary standard-Borel extension/disintegration/uniqueness/norm derivation plus uncountable graphing | essential-lemma deletions and unbounded-fiber separator | VERIFIED under explicit standard measure-theory trust boundary |
 | 3 | yes | preserved formal counterexample | bounded-offset repair | FALSIFIED, interpretation risk visible |
 | 4 | yes | preserved `L=0` counterexample | invalid depth-one mutation | FALSIFIED |
-| 5 | yes | actual L=2 MPNN, 800 held-out graphs, independent readout, continuum, topological reduction | no-message, shifted-label, and discontinuity controls | VERIFIED with general-proof dependency risk visible |
+| 5 | yes | independent recursive DIDM separation and Stone-Weierstrass density plus actual MPNN/continuum | essential-lemma deletions, no-message, shifted-label, and discontinuity controls | VERIFIED without assuming E.12/M.1; standard-theorem trust boundary visible |
 | 6 | yes | preserved exact two-point/binomial counterexample | bounded-envelope repair | FALSIFIED, interpretation risk visible |
 
 No conclusion remained unverifiable after the first traversal.
@@ -67,17 +68,18 @@ empty directory and the same no-hints traversal is repeated.
 
 Final result: **PASS**.
 
-- Canonical files opened: `164`
-- Candidate text files scanned: `367`
-- Exact judged paths checked: `182`
+- Canonical files opened: `174`
+- Candidate text files scanned: `757`
+- Exact judged paths checked: `370`
 - Judged-path subset: **PASS**
 - Broken links: `0`
 - Secret scan: **PASS**
-- Upload allowlist entries: `359`
-- Non-self SHA-256 manifest entries: `358`, all **PASS**
+- Upload allowlist entries: `749`
+- Non-self SHA-256 manifest entries: `748`, all **PASS**
 - Navigation digest:
-  `dfb8c8f511b7e0522337078f2b7479051a8c060edec466aad095773ecf0b4b1c`
+  `0e4c3729be69e5b975f1cd89d672eef59149972dee09f99e01bd6c4d1d621ef8`
 
 No conclusion remained unverifiable. The current verifier, not historical
-code, is the obvious verifier, and every displayed number on Claims 1, 2, and
-5 matches its downloadable expected-result JSON.
+code, is the obvious verifier. The displayed general quantifiers match the
+downloadable certificates, while the retained numerical values match their
+expected-result JSON.

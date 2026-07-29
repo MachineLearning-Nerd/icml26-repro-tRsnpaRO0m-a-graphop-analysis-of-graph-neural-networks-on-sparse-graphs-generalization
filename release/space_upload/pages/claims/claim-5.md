@@ -140,12 +140,15 @@ uv run --frozen python -m graphop_repro.run_all
 
 ## Provenance and limits
 
-- Scientific Git SHA: `d8343afb3e2ec346a2480454ba79363abe0f76fd`
-- Formal HF run: `a31c30b1-f9d8-497a-9b27-0d85a472912f`
+- Scientific Git SHA (current general proof):
+  `ec550a0b0f162cb0076dcb04ebf3ede3fbe621e4`
+- Current formal HF run: `84623c95-d792-4b59-8a50-1305c04929ca`
+- Superseded MPNN benchmark run retained as a regression:
+  `a31c30b1-f9d8-497a-9b27-0d85a472912f`
 - Compute: Hugging Face `cpu-upgrade`; estimated active cores `1`, allocated
   logical/affinity CPUs `64`, implementation single-threaded
-- Runtime: `21 s` orchestrated; verifier wall/process
-  `6.909086/6.908144 s`
+- Runtime: about `22 s` orchestrated; verifier wall/process
+  `7.058492/7.057538 s`
 - Seeds: deterministic construction; no stochastic sampling
 - Environment: [pyproject.toml](../../reproduction/pyproject.toml) and
   [uv.lock](../../reproduction/uv.lock)
