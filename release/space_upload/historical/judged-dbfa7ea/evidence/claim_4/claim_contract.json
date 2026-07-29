@@ -1,0 +1,20 @@
+{
+  "claim": 4,
+  "verdict": "FALSIFIED",
+  "source": {
+    "paper": "arXiv:2602.08785v1",
+    "anchor": "S5.Thmtheorem3",
+    "appendix_anchor": "A12.Thmtheorem2"
+  },
+  "exact_statement": "For every L in N0 and r>0, Gamma_L(BF_d^r) is a compact strict subset of P(H^L).",
+  "falsified_clause": "strict subset, under the stated universal L quantifier",
+  "unaffected_clause": "compactness",
+  "acceptance": [
+    "instantiate an allowed value L=0",
+    "construct a bofop-signal for arbitrary pi in P(H0)",
+    "derive Gamma_0=pi without finite-domain assumptions",
+    "independently reconstruct every assumption",
+    "reject the construction after mutating the critical depth to L=1"
+  ]
+}
+

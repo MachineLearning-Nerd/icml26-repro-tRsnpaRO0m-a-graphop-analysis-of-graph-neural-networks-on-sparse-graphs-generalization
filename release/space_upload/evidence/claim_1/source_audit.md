@@ -15,3 +15,18 @@ the general algebraic construction that embeds both examples:
 The statement that graphons and sparse graphs are represented by the same
 operator axioms is therefore tested directly, not inferred from a label.
 
+## Strengthened universal finite-atomic certificate
+
+For an arbitrary positive atomic probability vector `mu` and arbitrary matrix
+`A`, expanding the two bilinear forms shows that the coefficient of `u_i v_j`
+is respectively `mu_i A_ij` and `mu_j A_ji`. Thus detailed balance is
+sufficient, while the basis pair `(e_i,e_j)` proves it is necessary.
+Likewise, `A e_j` is column `j`, so positivity on every nonnegative signal is
+equivalent to entrywise nonnegativity. These are exact all-signal statements
+for every finite dimension, not a selected finite signal grid.
+
+For a bounded measurable symmetric nonnegative graphon kernel, the same
+identity is the Fubini/Tonelli exchange
+`integral integral W(x,y) v(y) u(x) dmu(y)dmu(x)` with `x,y` swapped.
+The executable finite certificate tests step kernels and sparse graph
+operators; it does not claim to formalize measure theory.

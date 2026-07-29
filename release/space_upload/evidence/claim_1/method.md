@@ -1,17 +1,21 @@
 # Claim 1 method
 
-All arithmetic is exact `fractions.Fraction`; there are no tolerances.
+The original exact examples remain as regressions. The strengthened verifier
+also proves the finite-atomic criteria by coefficient comparison and basis
+witnesses, then applies them with exact `fractions.Fraction` arithmetic to six
+families:
 
-- Dense case: a three-cell step graphon whose symmetric kernel has no zero
-  cells.  The induced operator includes the probability weight `1/3`.
-- Sparse case: the four-vertex path `P4` with sum aggregation.  This deliberately
-  has maximum fiber mass `2`, correcting the historical page's unsupported
-  `bound<=1` wording while satisfying the required finite bound.
-- Primary verifier: evaluates every pair of signals in `{-1,0,1}^n`, every
-  nonnegative signal in `{0,1}^n`, and every sign-vector cube vertex needed for
-  the exact `L-infinity -> L1` norm.
-- Independent checker: checks weighted matrix symmetry and entrywise
-  nonnegativity directly.  It imports no primary-verifier code.
-- Controls: one asymmetric positive matrix and one symmetric matrix with a
-  negative edge.  Each must fail for its named axiom.
+- symmetric dense step graphons through 256 cells;
+- paths through 16,384 vertices;
+- weighted cycles and degree-four circulants through 8,192 vertices;
+- weighted stars through 4,096 vertices; and
+- nonuniform reversible weighted chains through 1,024 vertices.
 
+Sparse zero entries are certified by their implicit representation, while
+every nonzero edge is visited. The independent module does not import the
+primary family implementation: it recomputes sparse norms from degree
+sequences and reversible edge flows and audits 162 small matrices against
+basis-witness definitions.
+
+The original asymmetric-positive and symmetric-negative controls remain. Each
+must fail for its named graphop axiom.

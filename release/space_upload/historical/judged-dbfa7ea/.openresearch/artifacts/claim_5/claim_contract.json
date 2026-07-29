@@ -1,0 +1,13 @@
+{
+  "claim": 5,
+  "verdict": "VERIFIED",
+  "source": {"paper": "arXiv:2602.08785v1", "anchor": "A13.Thmtheorem1"},
+  "statement": "For every L in N0, NN_L^1(BF_d^r) is uniformly dense in the continuous real functions on the bofop-DIDM quotient.",
+  "acceptance": [
+    "reconstruct a complete proof without the false strict-subset premise",
+    "independently verify a second Stone-Weierstrass route",
+    "identify exact source dependencies",
+    "reject the extension route when closedness is removed"
+  ]
+}
+

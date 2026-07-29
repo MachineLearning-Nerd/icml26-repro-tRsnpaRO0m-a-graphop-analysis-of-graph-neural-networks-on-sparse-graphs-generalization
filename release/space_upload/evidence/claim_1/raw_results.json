@@ -4,6 +4,42 @@
   "paper": "arXiv:2602.08785v1",
   "arithmetic": "exact rational strings",
   "seed": null,
+  "family_sweeps": [
+    {
+      "id": "dense_symmetric_step_graphons",
+      "kind": "dense_step_graphon",
+      "sizes": [8, 32, 128, 256]
+    },
+    {
+      "id": "sparse_paths",
+      "kind": "path",
+      "edge_weight": "1",
+      "sizes": [4, 16, 64, 256, 1024, 4096, 16384]
+    },
+    {
+      "id": "sparse_cycles",
+      "kind": "cycle",
+      "edge_weight": "3/5",
+      "sizes": [8, 32, 128, 512, 2048, 8192]
+    },
+    {
+      "id": "bounded_degree_circulants",
+      "kind": "circulant_degree_4",
+      "edge_weight": "2/7",
+      "sizes": [8, 32, 128, 512, 2048, 8192]
+    },
+    {
+      "id": "sparse_stars",
+      "kind": "star",
+      "edge_weight": "1/3",
+      "sizes": [4, 16, 64, 256, 1024, 4096]
+    },
+    {
+      "id": "nonuniform_reversible_weighted_chains",
+      "kind": "reversible_weighted_chain",
+      "sizes": [4, 16, 64, 256, 1024]
+    }
+  ],
   "cases": [
     {
       "id": "dense_three_cell_step_graphon",
@@ -71,4 +107,3 @@
     }
   ]
 }
-

@@ -8,7 +8,7 @@
     "icml2026-repro",
     "paper-tRsnpaRO0m"
   ],
-  "updated_at": "2026-07-28T18:35:26+00:00",
+  "updated_at": "2026-07-29T06:00:00+05:30",
   "root": {
     "slug": "current",
     "title": "Current verification — 3 VERIFIED, 3 FALSIFIED",
@@ -69,6 +69,12 @@
         "children": []
       },
       {
+        "slug": "historical-judged-8-of-12",
+        "title": "Historical judged 8/12 revision — superseded",
+        "file": "historical/judged-dbfa7ea/INDEX.md",
+        "children": []
+      },
+      {
         "slug": "historical-rejected-baseline",
         "title": "Historical rejected baseline",
         "file": "pages/index.md",
@@ -83,6 +89,6 @@
       }
     ]
   },
-  "agent_view_tokens": 331,
+  "agent_view_tokens": 372,
   "revision": "release-candidate"
 }

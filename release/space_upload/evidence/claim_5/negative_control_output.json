@@ -1,7 +1,29 @@
-{
-  "id": "remove_closedness_needed_by_tietze",
-  "nonclosed_subset": "(0,1) in [0,1]",
-  "target": "x -> 1/x",
-  "extension_route_rejected": true
-}
-
+[
+  {
+    "id": "remove_both_message_passing_layers",
+    "best_constant_train_mean": 0.185227064019,
+    "test_max_abs_error": 1.139784441349,
+    "expected_to_miss_threshold": true
+  },
+  {
+    "id": "deterministically_shift_training_labels",
+    "shift": 137,
+    "test": {
+      "rows": 800,
+      "targets": [
+        {"target": 1, "max_abs_error": 0.964369556959, "rmse": 0.562623526379},
+        {"target": 2, "max_abs_error": 0.21771441673, "rmse": 0.143789022091},
+        {"target": 3, "max_abs_error": 0.482882051246, "rmse": 0.167128259311}
+      ],
+      "maximum_error_all_targets": 0.964369556959,
+      "per_family_maximum_error": {
+        "path": 0.964369556959,
+        "cycle": 0.9510981803,
+        "circulant4": 0.948138466314,
+        "chorded_cycle": 0.949320657329,
+        "star": 0.832855777642
+      }
+    },
+    "expected_to_miss_threshold": true
+  }
+]

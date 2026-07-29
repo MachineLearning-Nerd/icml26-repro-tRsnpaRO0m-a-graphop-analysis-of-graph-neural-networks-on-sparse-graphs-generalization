@@ -11,3 +11,14 @@ ordinary maximum.  The negative control uses a countable probability space in
 which every atom has positive measure, so the unbounded pointwise sequence of
 fiber masses also has infinite essential supremum.
 
+For every finite atomic space, testing the representation against the atom
+indicator `e_j` forces `nu_i({j})=A_ij`, which proves uniqueness. For a
+nonnegative matrix, the exact induced norms are
+
+`||A||infinity->infinity=max_i sum_j A_ij` and
+`||A||1->1=max_j (sum_i mu_i A_ij)/mu_j`.
+
+Detailed balance converts the second expression into the `j`-th row sum, so
+both norms equal the essential supremum of the fiber masses. This
+parameterized derivation covers every finite sparse weighted graph satisfying
+the paper's symmetry assumption.

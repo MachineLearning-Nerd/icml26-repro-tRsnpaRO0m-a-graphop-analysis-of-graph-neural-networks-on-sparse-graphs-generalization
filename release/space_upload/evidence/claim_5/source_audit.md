@@ -5,10 +5,21 @@
 - Theorem M.1, anchor `A13.Thmtheorem1`, quantifies every `L in N0`.
 - Theorem L.2, anchor `A12.Thmtheorem2`, supplies compactness of the realizable
   DIDM image. Its separate strictness clause is not needed.
-- Theorem E.12 supplies the ambient MPNN algebra, point separation, and density
-  used by the paper.
+- Theorem E.12, anchor `A5.Thmtheorem12`, states ambient scalar MPNN uniform
+  density on `P(H^L)`.
 
 The paper's displayed proof has type slips (it alternates between functions on
 `H^L`, `P(H^L)`, and the bofop quotient). The reconstructed routes use the
 correct domain `Gamma_L(BF_d^r)` throughout.
 
+The current checker no longer reads asserted Boolean premises. It validates
+the exact source anchors and reconstructs the quantified restriction argument:
+compactness makes the realizable image closed in the metric ambient DIDM
+space, Tietze extends an arbitrary continuous target, Theorem E.12 supplies an
+ambient approximating MPNN, and restriction preserves the uniform error.
+
+The experimental route fixes `L=2`, `d=1`, and `r=1`. Every generated finite
+graph is an undirected weighted sparse graph with maximum fiber mass at most
+one. The targets are explicit continuous functions of three graph-level
+statistics produced by the two-layer message-passing computation, hence are
+continuous on the corresponding order-two DIDM quotient.

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560" role="img" aria-labelledby="title desc">
+  <title id="title">Universal approximation evidence</title>
+  <desc id="desc">Held-out readout error falls below the declared threshold, independent interpolation converges, and controls remain far above threshold.</desc>
+  <rect width="1200" height="560" fill="#fbfbf8"/>
+  <text x="55" y="58" font-family="sans-serif" font-size="32" font-weight="700" fill="#17212b">Actual MPNNs: signal below threshold, controls far above</text>
+  <line x1="100" y1="410" x2="1120" y2="410" stroke="#83909b" stroke-width="2"/>
+  <line x1="100" y1="105" x2="100" y2="410" stroke="#83909b" stroke-width="2"/>
+  <line x1="100" y1="395" x2="1120" y2="395" stroke="#c34635" stroke-width="3" stroke-dasharray="10 8"/>
+  <text x="105" y="385" font-family="sans-serif" font-size="17" fill="#a03225">declared max-error threshold = 0.04</text>
+  <g font-family="sans-serif" font-size="17" text-anchor="middle">
+    <rect x="165" y="385" width="150" height="25" fill="#31835a"/><text x="240" y="440" fill="#455565">held-out L=2</text><text x="240" y="468" fill="#215f40" font-weight="700">0.034723</text>
+    <rect x="365" y="390" width="150" height="20" fill="#55a579"/><text x="440" y="440" fill="#455565">independent</text><text x="440" y="468" fill="#215f40" font-weight="700">0.019023</text>
+    <rect x="565" y="409" width="150" height="1.5" fill="#72b58e"/><text x="640" y="440" fill="#455565">continuum, 128</text><text x="640" y="468" fill="#215f40" font-weight="700">0.000306</text>
+    <rect x="765" y="147" width="150" height="263" fill="#c65b4b"/><text x="840" y="440" fill="#455565">shifted labels</text><text x="840" y="468" fill="#8d2f23" font-weight="700">0.964370</text>
+    <rect x="965" y="105" width="150" height="305" fill="#a93e31"/><text x="1040" y="440" fill="#455565">no messages</text><text x="1040" y="468" fill="#8d2f23" font-weight="700">1.139784</text>
+  </g>
+  <text x="55" y="522" font-family="sans-serif" font-size="18" fill="#455565">800 held-out sparse graphs · five families · three nonlinear targets · independent implementation imports no primary code</text>
+</svg>

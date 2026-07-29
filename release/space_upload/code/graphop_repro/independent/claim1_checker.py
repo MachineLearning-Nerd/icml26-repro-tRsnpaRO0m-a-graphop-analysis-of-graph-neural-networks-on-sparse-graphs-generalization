@@ -12,6 +12,11 @@ from fractions import Fraction
 from pathlib import Path
 from typing import Any
 
+from graphop_repro.independent.finite_atomic_checker import (
+    audit_family_sweeps,
+    audit_generic_certificate,
+)
+
 
 def _f(value: str) -> Fraction:
     return Fraction(value)
@@ -55,13 +60,19 @@ def check(raw_path: Path) -> dict[str, Any]:
     raw = json.loads(raw_path.read_text(encoding="utf-8"))
     cases = [_check_case(case) for case in raw["cases"]]
     controls = [_check_control(control) for control in raw["negative_controls"]]
+    generic = audit_generic_certificate()
+    family_sweeps = audit_family_sweeps(raw["family_sweeps"])
     assert all(case["graphop"] for case in cases)
     assert all(control["detected"] for control in controls)
+    assert all(family["all_graphops"] for family in family_sweeps)
     return {
         "claim": 1,
-        "checker": "weighted-matrix criterion (independent module)",
+        "checker": (
+            "independent basis-witness criterion and closed-form family audit"
+        ),
         "status": "VERIFIED",
+        "generic_finite_atomic_audit": generic,
+        "family_sweeps": family_sweeps,
         "cases": cases,
         "negative_controls": controls,
     }
-

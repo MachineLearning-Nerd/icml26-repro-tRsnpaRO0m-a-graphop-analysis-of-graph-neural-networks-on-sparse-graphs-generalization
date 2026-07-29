@@ -1,10 +1,66 @@
 {
   "claim": 5,
-  "checker": "independent topological dependency graph",
+  "checker": "independent constructive piecewise-linear MPNN readout; no primary imports and no asserted Boolean premises",
   "status": "VERIFIED",
-  "tietze_route_complete": true,
-  "stone_weierstrass_route_complete": true,
-  "proper_subset_not_required": true,
-  "nonclosed_domain_control_rejected": true
+  "source_anchor_checks": {
+    "ambient_density_E12": true,
+    "compactness_L2": true,
+    "target_M1": true
+  },
+  "topological_restriction_route_complete": true,
+  "independent_sparse_graph_readout": {
+    "architecture": "same L=2 message-passing embedding; independently constructed additive piecewise-linear readout",
+    "rows": 800,
+    "sweep": [
+      {
+        "knots_per_coordinate": 5,
+        "maximum_error_all_targets": 0.215679142844,
+        "target_maximum_errors": [0.215679142844, 0.041167448285, 0.161410962365]
+      },
+      {
+        "knots_per_coordinate": 9,
+        "maximum_error_all_targets": 0.0710656734,
+        "target_maximum_errors": [0.0710656734, 0.016184138632, 0.053184216067]
+      },
+      {
+        "knots_per_coordinate": 17,
+        "maximum_error_all_targets": 0.019023154804,
+        "target_maximum_errors": [0.019023154804, 0.005865879689, 0.013063633313]
+      },
+      {
+        "knots_per_coordinate": 33,
+        "maximum_error_all_targets": 0.00482755826,
+        "target_maximum_errors": [0.00482755826, 0.00190830503, 0.003374197071]
+      },
+      {
+        "knots_per_coordinate": 65,
+        "maximum_error_all_targets": 0.001202170796,
+        "target_maximum_errors": [0.001202170796, 0.000562444371, 0.000836489026]
+      },
+      {
+        "knots_per_coordinate": 129,
+        "maximum_error_all_targets": 0.000298788459,
+        "target_maximum_errors": [0.000298788459, 0.000154445459, 0.000205945843]
+      }
+    ],
+    "first_knot_count_meeting_threshold": 17,
+    "final_threshold_passes": true
+  },
+  "weighted_cycle_continuum": {
+    "grid_points": 8193,
+    "sweep": [
+      {"knot_count": 4, "maximum_error_all_targets": 0.43725651353},
+      {"knot_count": 8, "maximum_error_all_targets": 0.096576218758},
+      {"knot_count": 16, "maximum_error_all_targets": 0.021732918243},
+      {"knot_count": 32, "maximum_error_all_targets": 0.005124094487},
+      {"knot_count": 64, "maximum_error_all_targets": 0.001242620571},
+      {"knot_count": 128, "maximum_error_all_targets": 0.000305914799}
+    ],
+    "final_threshold_passes": true,
+    "discontinuous_target_uniform_lower_bound": 0.5
+  },
+  "negative_control": {
+    "discontinuous_target_rejected": true,
+    "uniform_error_lower_bound": 0.5
+  }
 }
-

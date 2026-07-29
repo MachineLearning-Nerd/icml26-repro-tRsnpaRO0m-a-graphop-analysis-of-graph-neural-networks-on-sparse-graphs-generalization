@@ -1,23 +1,31 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="470" viewBox="0 0 1200 470" role="img" aria-labelledby="title desc">
-  <title id="title">Six claim reproduction outcome</title>
-  <desc id="desc">Three claims verified and three falsified, compared with a previous judge score of zero out of twelve.</desc>
-  <rect width="1200" height="470" fill="#f7f7f2"/>
-  <text x="60" y="65" font-family="sans-serif" font-size="35" font-weight="700" fill="#17212b">Exact claim audit: 3 verified, 3 falsified</text>
-  <text x="60" y="105" font-family="sans-serif" font-size="19" fill="#455565">Previous live judge: 0/12 · best-supported forecast: 12/12 (not a judge result)</text>
-  <g font-family="sans-serif" font-size="21" font-weight="700" text-anchor="middle">
-    <rect x="60" y="155" width="160" height="170" rx="14" fill="#d9efe3" stroke="#24835a" stroke-width="3"/>
-    <text x="140" y="205" fill="#155a3b">CLAIM 1</text><text x="140" y="248" font-size="34" fill="#155a3b">VERIFIED</text><text x="140" y="290" font-size="16" font-weight="400" fill="#254d3c">graphop axioms</text>
-    <rect x="240" y="155" width="160" height="170" rx="14" fill="#d9efe3" stroke="#24835a" stroke-width="3"/>
-    <text x="320" y="205" fill="#155a3b">CLAIM 2</text><text x="320" y="248" font-size="34" fill="#155a3b">VERIFIED</text><text x="320" y="290" font-size="16" font-weight="400" fill="#254d3c">bounded fibers</text>
-    <rect x="420" y="155" width="160" height="170" rx="14" fill="#fde2dd" stroke="#b43b2b" stroke-width="3"/>
-    <text x="500" y="205" fill="#7e281e">CLAIM 3</text><text x="500" y="248" font-size="31" fill="#7e281e">FALSIFIED</text><text x="500" y="290" font-size="16" font-weight="400" fill="#66352e">uniform constant</text>
-    <rect x="600" y="155" width="160" height="170" rx="14" fill="#fde2dd" stroke="#b43b2b" stroke-width="3"/>
-    <text x="680" y="205" fill="#7e281e">CLAIM 4</text><text x="680" y="248" font-size="31" fill="#7e281e">FALSIFIED</text><text x="680" y="290" font-size="16" font-weight="400" fill="#66352e">strict at L=0</text>
-    <rect x="780" y="155" width="160" height="170" rx="14" fill="#d9efe3" stroke="#24835a" stroke-width="3"/>
-    <text x="860" y="205" fill="#155a3b">CLAIM 5</text><text x="860" y="248" font-size="34" fill="#155a3b">VERIFIED</text><text x="860" y="290" font-size="16" font-weight="400" fill="#254d3c">universal density</text>
-    <rect x="960" y="155" width="160" height="170" rx="14" fill="#fde2dd" stroke="#b43b2b" stroke-width="3"/>
-    <text x="1040" y="205" fill="#7e281e">CLAIM 6</text><text x="1040" y="248" font-size="31" fill="#7e281e">FALSIFIED</text><text x="1040" y="290" font-size="16" font-weight="400" fill="#66352e">uniform risk</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="500" viewBox="0 0 1200 500" role="img" aria-labelledby="title desc">
+  <title id="title">Evidence added after the live eight-out-of-twelve judgment</title>
+  <desc id="desc">Claims one and two move from four-node examples to parameterized certificates, while Claim five gains actual held-out MPNN measurements.</desc>
+  <rect width="1200" height="500" fill="#f7f7f2"/>
+  <text x="60" y="62" font-family="sans-serif" font-size="34" font-weight="700" fill="#17212b">What changed after the live 8/12 judgment</text>
+  <text x="60" y="102" font-family="sans-serif" font-size="19" fill="#455565">Current score: 8/12 · projected: 10–12/12 · only a future judge can change the score</text>
+  <g font-family="sans-serif">
+    <rect x="60" y="145" width="330" height="255" rx="18" fill="#e8f0fa" stroke="#3b6ea8" stroke-width="3"/>
+    <text x="90" y="188" font-size="22" font-weight="700" fill="#244f80">CLAIMS 1–2 · formerly TOY</text>
+    <text x="90" y="235" font-size="54" font-weight="700" fill="#244f80">34</text>
+    <text x="195" y="235" font-size="21" fill="#244f80">graph instances</text>
+    <text x="90" y="278" font-size="21" fill="#244f80">up to 16,384 vertices</text>
+    <text x="90" y="315" font-size="21" fill="#244f80">448,593,904 cells certified</text>
+    <text x="90" y="362" font-size="18" fill="#455565">all-dimensional finite theorem</text>
+    <rect x="435" y="145" width="330" height="255" rx="18" fill="#e7f3ea" stroke="#37855b" stroke-width="3"/>
+    <text x="465" y="188" font-size="22" font-weight="700" fill="#215f40">CLAIM 5 · formerly 0/2</text>
+    <text x="465" y="235" font-size="54" font-weight="700" fill="#215f40">800</text>
+    <text x="575" y="235" font-size="21" fill="#215f40">held-out graphs</text>
+    <text x="465" y="278" font-size="21" fill="#215f40">max error 0.034723</text>
+    <text x="465" y="315" font-size="21" fill="#215f40">independent error 0.019023</text>
+    <text x="465" y="362" font-size="18" fill="#455565">actual L=2 MPNN + continuum</text>
+    <rect x="810" y="145" width="330" height="255" rx="18" fill="#f3ede2" stroke="#9a6d2f" stroke-width="3"/>
+    <text x="840" y="188" font-size="22" font-weight="700" fill="#76501f">CLAIMS 3, 4, 6</text>
+    <text x="840" y="235" font-size="54" font-weight="700" fill="#76501f">6/6</text>
+    <text x="970" y="235" font-size="21" fill="#76501f">points retained</text>
+    <text x="840" y="278" font-size="21" fill="#76501f">formal counterexamples</text>
+    <text x="840" y="315" font-size="21" fill="#76501f">cumulative regressions pass</text>
+    <text x="840" y="362" font-size="18" fill="#455565">historical evidence preserved</text>
   </g>
-  <text x="60" y="390" font-family="sans-serif" font-size="18" fill="#455565">Green = independently reconstructed certificate · Red = assumption-satisfying counterexample</text>
-  <text x="60" y="423" font-family="sans-serif" font-size="17" fill="#455565">All checks use exact integer/rational arithmetic; every negative control is required to fail.</text>
+  <text x="60" y="455" font-family="sans-serif" font-size="18" fill="#455565">All new formal runs: Hugging Face cpu-upgrade, verifier single-threaded, fixed uv command.</text>
 </svg>

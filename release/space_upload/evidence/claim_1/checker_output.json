@@ -1,7 +1,73 @@
 {
   "claim": 1,
-  "checker": "weighted-matrix criterion (independent module)",
+  "checker": "independent basis-witness criterion and closed-form family audit",
   "status": "VERIFIED",
+  "generic_finite_atomic_audit": {
+    "scope": "independent exhaustive basis audit of the generic criteria",
+    "measures_checked": 2,
+    "matrices_checked": 162,
+    "criterion_equivalences_checked": 324,
+    "self_adjoint_iff_weighted_balance": true,
+    "positivity_iff_entrywise_nonnegative": true,
+    "fiber_uniqueness_from_atom_indicators": true,
+    "norm_identity_derivation_checked": true
+  },
+  "family_sweeps": [
+    {
+      "id": "dense_symmetric_step_graphons",
+      "instances": 4,
+      "maximum_n": 256,
+      "total_operator_cells_certified": 83008,
+      "total_nonzero_entries_checked": 83008,
+      "all_graphops": true,
+      "all_bofop_norm_identities": true
+    },
+    {
+      "id": "sparse_paths",
+      "instances": 7,
+      "maximum_n": 16384,
+      "total_operator_cells_certified": 286331152,
+      "total_nonzero_entries_checked": 43674,
+      "all_graphops": true,
+      "all_bofop_norm_identities": true
+    },
+    {
+      "id": "sparse_cycles",
+      "instances": 6,
+      "maximum_n": 8192,
+      "total_operator_cells_certified": 71582784,
+      "total_nonzero_entries_checked": 21840,
+      "all_graphops": true,
+      "all_bofop_norm_identities": true
+    },
+    {
+      "id": "bounded_degree_circulants",
+      "instances": 6,
+      "maximum_n": 8192,
+      "total_operator_cells_certified": 71582784,
+      "total_nonzero_entries_checked": 43680,
+      "all_graphops": true,
+      "all_bofop_norm_identities": true
+    },
+    {
+      "id": "sparse_stars",
+      "instances": 6,
+      "maximum_n": 4096,
+      "total_operator_cells_certified": 17895696,
+      "total_nonzero_entries_checked": 10908,
+      "all_graphops": true,
+      "all_bofop_norm_identities": true
+    },
+    {
+      "id": "nonuniform_reversible_weighted_chains",
+      "instances": 5,
+      "maximum_n": 1024,
+      "total_operator_cells_certified": 1118480,
+      "total_nonzero_entries_checked": 2718,
+      "all_graphops": true,
+      "all_bofop_norm_identities": true
+    }
+  ],
   "cases": [
     {
       "id": "dense_three_cell_step_graphon",
@@ -33,4 +99,3 @@
     }
   ]
 }
-

@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "claim": 5,
+  "premises": {
+    "ambient_didm_compact_metric": true,
+    "ambient_didm_hausdorff": true,
+    "realizable_didm_compact": true,
+    "tietze_extension_for_closed_subset": true,
+    "ambient_mpnn_uniform_density": true,
+    "mpnn_outputs_form_algebra": true,
+    "mpnn_outputs_contain_constants": true,
+    "ambient_mpnn_separates_points": true,
+    "restriction_preserves_separation": true
+  },
+  "source_dependencies": {
+    "realizable_compactness": "Theorem L.2 compactness clause",
+    "ambient_density_and_algebra": "Theorem E.12",
+    "topology": "compact subsets of Hausdorff spaces are closed; Tietze extension; Stone-Weierstrass"
+  },
+  "negative_control": {
+    "id": "remove_closedness_needed_by_tietze",
+    "subset": "(0,1) in [0,1]",
+    "closed": false,
+    "target": "x -> 1/x",
+    "continuous_extension_to_ambient": false
+  }
+}
+

@@ -74,15 +74,56 @@ Exact formal command inherited by every node:
 uv run --frozen python -m graphop_repro.run_all
 ```
 
+## Strengthening after the live 8/12 verdict
+
+The current verdict dataset and judged Space were refreshed by exact revision:
+
+```text
+hf download ICML-2026-agent-repro/verdicts verdicts.json --repo-type dataset --revision c0a8b6e8525730a6fd09114172887080841ffbe3 --local-dir <fresh-directory> --max-workers 1
+jq '[.[] | select(.space_id == "DineshAI/tRsnpaRO0m")]' verdicts.json
+hf download DineshAI/tRsnpaRO0m --repo-type space --revision dbfa7ea0de058ad35fa8bab58684306bd9ac7e7c --include '*' --local-dir <fresh-directory> --max-workers 1 --force-download
+shasum -a 256 <every judged text path>
+```
+
+The filter returned exactly one record. Dataset file SHA-256:
+`1a5eaf0cf1955e56bc9f9b798e626f916742917a5781bd8a8789bb7f090eef9b`.
+The protected judged-tree manifest has 182 entries and SHA-256
+`a30cae31363ac00a1f79924e2946c16fc601a11636e35c1520082d0f253c3aae`.
+
+New experiment nodes and runs:
+
+```text
+orx create-experiment 2ffa28c7-b71a-4b21-889f-cfa977b5bd92 --title "General finite graphop and bofop certificates" --parent 47f262e6-7238-4371-8f14-df1a29212c24
+orx exp run 4d504792-8198-486a-8569-c4557c64e17d --backend hf --flavor cpu-upgrade
+orx exp run 4d504792-8198-486a-8569-c4557c64e17d --backend hf --flavor cpu-upgrade --image ghcr.io/astral-sh/uv:python3.12-bookworm-slim
+orx exp wait 4d504792-8198-486a-8569-c4557c64e17d --timeout 480
+orx logs 7227edb5-3b27-44f8-bc3e-62b07337edb4
+
+orx create-experiment 2ffa28c7-b71a-4b21-889f-cfa977b5bd92 --title "Constructive MPNN universal approximation evidence" --parent 4d504792-8198-486a-8569-c4557c64e17d
+orx exp run a05f1333-09d1-403a-9a24-2e5b48891263 --backend hf --flavor cpu-upgrade --image ghcr.io/astral-sh/uv:python3.12-bookworm-slim --timeout 1h
+orx exp wait a05f1333-09d1-403a-9a24-2e5b48891263 --interval 10 --timeout 480
+orx logs b9a7c212-fb42-4547-a8db-519cee6fe22f --bytes 1000000
+orx exp run a05f1333-09d1-403a-9a24-2e5b48891263 --backend hf --flavor cpu-upgrade --image ghcr.io/astral-sh/uv:python3.12-bookworm-slim --timeout 1h
+orx exp wait a05f1333-09d1-403a-9a24-2e5b48891263 --interval 10 --timeout 480
+orx logs a31c30b1-f9d8-497a-9b27-0d85a472912f --bytes 1000000
+
+orx create-experiment 2ffa28c7-b71a-4b21-889f-cfa977b5bd92 --title "Evaluator-visible strengthened evidence candidate" --parent a05f1333-09d1-403a-9a24-2e5b48891263
+```
+
+The first Claims 1–2 submission used the backend's default image and failed
+before science because `uv` was absent. The first Claim 5 run exposed an exact
+floating-point serialization comparison across Python patch versions; the
+replacement uses a structural comparison with `1e-9` tolerance while leaving
+all scientific thresholds unchanged. Both failures and fixes remain in the
+experiment record.
+
 ## Release validation
 
 ```text
 marimo check notebooks/graphop_claims.py
 xmllint --noout reports/reproduction/images/*.svg
-rsvg-convert -w 1200 reports/reproduction/images/<figure>.svg -o <temporary-preview>.png
-git clone https://huggingface.co/spaces/DineshAI/tRsnpaRO0m <fresh-directory>
-git checkout 9ded82baa88100f73731decd32ad0895120ae8ba
-git archive 9ded82baa88100f73731decd32ad0895120ae8ba
+rsvg-convert reports/reproduction/images/<figure>.svg -o <temporary-preview>.png
+hf download DineshAI/tRsnpaRO0m --repo-type space --revision dbfa7ea0de058ad35fa8bab58684306bd9ac7e7c --include '*' --local-dir <fresh-directory> --max-workers 1 --force-download
 uv run --frozen python release/validate_candidate.py <fresh-candidate> <judged-tree>
 ```
 

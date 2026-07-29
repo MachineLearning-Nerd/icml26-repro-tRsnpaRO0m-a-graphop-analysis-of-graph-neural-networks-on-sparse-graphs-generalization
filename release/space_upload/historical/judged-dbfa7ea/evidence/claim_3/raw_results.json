@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "claim": 3,
+  "source_statement": {
+    "anchor": "S4.Thmtheorem1",
+    "output_claim": "There exists C' depending on L,D,r such that output_gap <= C' d_M for every model in MP_D and bofop inputs in BF_d^r."
+  },
+  "formal_class_audit": {
+    "anchor": "S2.SS2.p2.15",
+    "bounded_quantities": ["Lipschitz constants of phi_l and psi"],
+    "missing_quantities": ["phi_l(0)", "psi(0)", "output ranges"],
+    "prose_tension": "Section 4.1 calls hidden representations [-1,1]-valued without imposing that range in the MPNN definition."
+  },
+  "singleton_inputs": {
+    "space": "singleton with mass 1",
+    "A1": "zero",
+    "A1_norm": "0",
+    "A2": "identity",
+    "A2_norm": "1",
+    "r": "1",
+    "f1": "0",
+    "f2": "0"
+  },
+  "model_family": {
+    "L": 1,
+    "dimensions": [1, 1, 1, 1],
+    "D": "1",
+    "phi_0": "x -> M",
+    "phi_1": "(u,v) -> v",
+    "psi": "z -> z",
+    "lipschitz_constants": ["0", "1", "1"]
+  },
+  "action_metric_bound": {
+    "profile_support_diameter_bound": "2*(k+1)",
+    "weighted_series": "sum_{k>=0} 2^-k * 2*(k+1) = 8",
+    "bound": "d_M<=8"
+  },
+  "calibrated_constant_sweep": ["0", "1", "2", "4", "8", "16", "32", "64"],
+  "negative_control": {
+    "id": "add_missing_initial_offset_bound",
+    "added_max_abs_phi0_zero": "1",
+    "M": "9",
+    "expected": "reject counterexample family member"
+  }
+}
+

@@ -1,0 +1,27 @@
+{
+  "claim": 2,
+  "checker": "finite weighted induced norms plus countable-series identity",
+  "status": "VERIFIED",
+  "cases": [
+    {
+      "id": "sparse_path_p4",
+      "matrix_matches_fiber_integral": true,
+      "fiber_masses": ["1", "2", "2", "1"],
+      "linfinity_to_linfinity_norm": "2",
+      "l1_to_l1_norm": "2",
+      "essential_supremum_fiber_mass": "2",
+      "bofop": true
+    }
+  ],
+  "negative_controls": [
+    {
+      "id": "countable_diagonal_unbounded_fibers",
+      "partial_norm_formula_checks": 5,
+      "all_partial_norm_formulas_hold": true,
+      "bounded_graphop_norm": "2",
+      "unbounded_fiber_witness_valid": true,
+      "rejected_as_bofop": true
+    }
+  ]
+}
+

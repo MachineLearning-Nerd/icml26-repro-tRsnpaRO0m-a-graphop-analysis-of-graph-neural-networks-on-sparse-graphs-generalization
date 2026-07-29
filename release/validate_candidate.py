@@ -128,12 +128,16 @@ def main() -> None:
     old_paths = {
         path.relative_to(judged).as_posix()
         for path in judged.rglob("*")
-        if path.is_file() and ".git/" not in path.as_posix()
+        if path.is_file()
+        and ".git/" not in path.as_posix()
+        and ".cache/" not in path.as_posix()
     }
     new_paths = {
         path.relative_to(root).as_posix()
         for path in root.rglob("*")
-        if path.is_file() and ".git/" not in path.as_posix()
+        if path.is_file()
+        and ".git/" not in path.as_posix()
+        and ".cache/" not in path.as_posix()
     }
     missing_old = sorted(old_paths - new_paths)
     assert not missing_old, "historical paths missing:\n" + "\n".join(missing_old)

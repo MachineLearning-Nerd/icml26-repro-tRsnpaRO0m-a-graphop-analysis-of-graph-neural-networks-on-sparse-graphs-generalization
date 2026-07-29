@@ -1,28 +1,49 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "claim": 5,
-  "premises": {
-    "ambient_didm_compact_metric": true,
-    "ambient_didm_hausdorff": true,
-    "realizable_didm_compact": true,
-    "tietze_extension_for_closed_subset": true,
-    "ambient_mpnn_uniform_density": true,
-    "mpnn_outputs_form_algebra": true,
-    "mpnn_outputs_contain_constants": true,
-    "ambient_mpnn_separates_points": true,
-    "restriction_preserves_separation": true
+  "paper": "arXiv:2602.08785v1",
+  "seed": null,
+  "source_theorems": {
+    "ambient_density": {
+      "anchor": "A5.Thmtheorem12",
+      "label": "Theorem E.12",
+      "statement": "For fixed L, scalar L-layer MPNNs with readout are uniformly dense in the continuous real functions on the ambient DIDM space P(H^L)."
+    },
+    "realizable_compactness": {
+      "anchor": "A12.Thmtheorem2",
+      "label": "Theorem L.2",
+      "statement": "For every L>=0, the realizable bofop-DIDM image Gamma_L(BF_d^r) is compact. Only this compactness clause is used."
+    },
+    "target": {
+      "anchor": "A13.Thmtheorem1",
+      "label": "Theorem M.1",
+      "statement": "For every L in N0, scalar L-layer MPNNs are uniformly dense in continuous real functions on the bofop-DIDM quotient."
+    }
   },
-  "source_dependencies": {
-    "realizable_compactness": "Theorem L.2 compactness clause",
-    "ambient_density_and_algebra": "Theorem E.12",
-    "topology": "compact subsets of Hausdorff spaces are closed; Tietze extension; Stone-Weierstrass"
+  "benchmark": {
+    "bofop_bound_r": 1.0,
+    "sizes": [16, 32, 64, 128, 256, 512],
+    "train_families": ["path", "cycle", "circulant4", "chorded_cycle", "star"],
+    "validation_families": ["path", "cycle", "circulant4", "chorded_cycle", "star"],
+    "test_families": ["path", "cycle", "circulant4", "chorded_cycle", "star"],
+    "train_count_per_family": 200,
+    "validation_count_per_family": 80,
+    "test_count_per_family": 160,
+    "train_split_offset": 1,
+    "validation_split_offset": 7,
+    "test_split_offset": 19,
+    "degree_sweep": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+    "sample_count_sweep": [125, 375, 1000],
+    "acceptance_max_error": 0.04,
+    "control_minimum_error": 0.25,
+    "shuffled_label_shift": 137
   },
-  "negative_control": {
-    "id": "remove_closedness_needed_by_tietze",
-    "subset": "(0,1) in [0,1]",
-    "closed": false,
-    "target": "x -> 1/x",
-    "continuous_extension_to_ambient": false
+  "continuum_certificate": {
+    "evaluation_grid_size": 8193,
+    "knot_counts": [4, 8, 16, 32, 64, 128],
+    "acceptance_max_error": 0.01
+  },
+  "independent_readout": {
+    "knot_counts": [5, 9, 17, 33, 65, 129]
   }
 }
-

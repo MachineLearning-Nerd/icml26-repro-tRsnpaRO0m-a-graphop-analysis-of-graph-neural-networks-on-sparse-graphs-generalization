@@ -1,38 +1,55 @@
 # Reproduction: graphops on sparse graphs
 
-We audited all six judged claims in *A Graphop Analysis of Graph Neural
-Networks on Sparse Graphs: Generalization and Universal Approximation*
-(arXiv:2602.08785). Exact finite certificates verify the graphop and
-bounded-fiber definitions; proof certificates verify universal approximation;
-assumption-satisfying counterexamples falsify the formal uniform-continuity,
-depth-zero strict-subset, and uniform-generalization statements.
+This project reproduces all six judged claims in *A Graphop Analysis of Graph
+Neural Networks on Sparse Graphs: Generalization and Universal Approximation*
+(arXiv:2602.08785).
 
-The previous live judge score is **0/12**. The scientific result below is a
-forecast, not a new judge score: **3 VERIFIED, 3 FALSIFIED**, with a
-conservative projected range of **8–12/12** and a best-supported possible
-score of **12/12**.
+The current live judge score is **8/12** at exact Hugging Face revision
+`dbfa7ea0de058ad35fa8bab58684306bd9ac7e7c`. The judge gave Claims 1 and 2
+toy credit, accepted the falsifications of Claims 3, 4, and 6, and found
+Claim 5 inconclusive because it had no actual MPNN experiment.
+
+This revision directly addresses the missing evidence:
+
+- a necessary-and-sufficient graphop/bofop certificate for every finite
+  atomic dimension, exercised on 34 dense and sparse instances through 16,384
+  vertices;
+- an actual two-layer MPNN evaluated on 800 held-out sparse graphs, with
+  maximum error `0.034723199005` against a declared `0.04` threshold;
+- a separately implemented readout reaching `0.019023154804`, plus a
+  constructive weighted-cycle continuum and two failing experimental
+  controls.
+
+The scientific assessment is **3 VERIFIED and 3 FALSIFIED**. The conservative
+post-change forecast is **10–12/12**, with **12/12** the best-supported
+possibility—not a live score.
 
 - [Illustrated technical report](reports/reproduction/report.md)
 - [Self-contained marimo tutorial](notebooks/graphop_claims.py)
-- [Evaluator-visible candidate entrypoint](candidate/README.md)
-- [Open in molab](https://molab.marimo.io/github/MachineLearning-Nerd/icml26-repro-tRsnpaRO0m-a-graphop-analysis-of-graph-neural-networks-on-sparse-graphs-generalization/blob/main/notebooks/graphop_claims.py)
+- [Evaluator-visible Space candidate](release/space_upload/README.md)
+- [Claim 1 certificate](release/space_upload/pages/claims/claim-1.md)
+- [Claim 2 certificate](release/space_upload/pages/claims/claim-2.md)
+- [Claim 5 MPNN evidence](release/space_upload/pages/claims/claim-5.md)
+- [![Open in molab](https://marimo.io/molab-shield.svg)](https://molab.marimo.io/github/MachineLearning-Nerd/icml26-repro-tRsnpaRO0m-a-graphop-analysis-of-graph-neural-networks-on-sparse-graphs-generalization/blob/main/notebooks/graphop_claims.py)
 
-Paper comparison: the paper makes qualitative theorem claims rather than a
-single benchmark number. We observed exact residual `0` for both graphop
-constructions, exact fiber bound `2` for sparse `P4`, and explicit formal
-counterexamples where the claimed uniform constants cannot be finite. No
-downscaled training or proxy benchmark was substituted. Compute was local,
-single-core CPU; every formal run finished in 5 seconds of orchestrated time.
+The fixed command on every experiment is:
 
-| Branch/experiment | Purpose | Exact run command | Assessment | Compute |
+```text
+uv run --frozen python -m graphop_repro.run_all
+```
+
+Formal strengthened runs used Hugging Face `cpu-upgrade`, with an estimated
+one active verifier core. The implementation is single-threaded even though
+the jobs exposed 64 logical CPUs.
+
+## Experiment log
+
+| Branch/experiment | Purpose or change | Exact run command | Assessment/outcome | Compute |
 |---|---|---|---|---|
-| `main` | Publication surface for the report, notebook, verifier, and exact Space payload | Not run as an experiment (publication surface) | mirrors the frozen release candidate | N/A |
-| `orx/frozen-baseline-exact-graphop-definition` | Lock Python 3.12/uv and verify Claim 1 with independent controls | `uv run --frozen python -m graphop_repro.run_all` | Claim 1 VERIFIED | local CPU, single-threaded, 5 s orchestrated |
-| `orx/exact-bounded-fiber-characterization` | Add exact Claim 2 fibers, norm identity, and a graphop/non-bofop control | `uv run --frozen python -m graphop_repro.run_all` | Claim 2 VERIFIED; Claim 1 regression VERIFIED | local CPU, single-threaded, 5 s orchestrated |
-| `orx/corollary-5-3-l-zero-counterexample` | Audit Corollary 5.3's universal depth quantifier with a proof certificate | `uv run --frozen python -m graphop_repro.run_all` | Claim 4 FALSIFIED; prior regressions pass | local CPU, single-threaded, 5 s orchestrated |
-| `orx/theorem-4-1-uniform-constant-counterexample` | Audit the formal `MP_D` class and the claimed uniform constant | `uv run --frozen python -m graphop_repro.run_all` | Claim 3 FALSIFIED; prior regressions pass | local CPU, single-threaded, 5 s orchestrated |
-| `orx/universal-approximation-proof-reconstruction` | Reconstruct Theorem M.1 by Tietze and Stone-Weierstrass routes | `uv run --frozen python -m graphop_repro.run_all` | Claim 5 VERIFIED; prior regressions pass | local CPU, single-threaded, 5 s orchestrated |
-| `orx/formal-mpnn-uniform-generalization-counterexampl` | Test uniform generalization over formal `MP_D` with exact binomial evidence | `uv run --frozen python -m graphop_repro.run_all` | Claim 6 FALSIFIED; all six cumulative checks pass | local CPU, single-threaded, 5 s orchestrated |
-| `orx/evaluator-visible-release-candidate` | Package the cumulative evidence, report, notebook, and evaluator navigation | `uv run --frozen python -m graphop_repro.run_all` | release validation pending | local CPU, single-threaded |
+| `main` | Public README, report, notebook, and release surface | Not run as an experiment (publication surface) | Mirrors the winning cumulative evidence | no experiment |
+| [`orx/formal-mpnn-uniform-generalization-counterexampl`](https://github.com/MachineLearning-Nerd/icml26-repro-tRsnpaRO0m-a-graphop-analysis-of-graph-neural-networks-on-sparse-graphs-generalization/tree/orx/formal-mpnn-uniform-generalization-counterexampl) | Prior 8/12 scientific winner; Claims 3, 4, and 6 counterexamples | `uv run --frozen python -m graphop_repro.run_all` | Claims 3, 4, 6 FALSIFIED; prior finite checks pass | local CPU, single-threaded, 5 s orchestrated |
+| [`orx/general-finite-graphop-and-bofop-certificates`](https://github.com/MachineLearning-Nerd/icml26-repro-tRsnpaRO0m-a-graphop-analysis-of-graph-neural-networks-on-sparse-graphs-generalization/tree/orx/general-finite-graphop-and-bofop-certificates) | Replace four-node-only Claims 1–2 evidence with a parameterized theorem and family sweeps | `uv run --frozen python -m graphop_repro.run_all` | Claims 1–2 VERIFIED across 34 instances; all cumulative checks pass | HF `cpu-upgrade`, one active core, 26 s orchestrated |
+| [`orx/constructive-mpnn-universal-approximation-eviden`](https://github.com/MachineLearning-Nerd/icml26-repro-tRsnpaRO0m-a-graphop-analysis-of-graph-neural-networks-on-sparse-graphs-generalization/tree/orx/constructive-mpnn-universal-approximation-eviden) | Add actual sparse-graph MPNN, independent readout, continuum, and controls for Claim 5 | `uv run --frozen python -m graphop_repro.run_all` | Claim 5 VERIFIED; held-out max `0.034723199005`; all cumulative checks pass | HF `cpu-upgrade`, one active core, 21 s orchestrated |
+| `orx/evaluator-visible-strengthened-evidence-candidat` | Preserve the exact judged tree and expose the strengthened evidence from the canonical Space entrypoint | `uv run --frozen python -m graphop_repro.run_all` | candidate validation and publication gates in progress | HF `cpu-upgrade` formal run pending |
 
 Paper: arXiv `2602.08785`; OpenReview `tRsnpaRO0m`.

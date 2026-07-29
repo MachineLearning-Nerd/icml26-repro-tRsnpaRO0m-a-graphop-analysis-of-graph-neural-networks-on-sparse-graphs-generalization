@@ -2,11 +2,9 @@
 
 Verdict: **VERIFIED**
 
-The exact finite-atomic checks instantiate both sides of the paper's unification
-claim.  The dense step-graphon operator and sparse path adjacency operator have
-zero adjoint residual on their complete signed test domains, preserve every
-nonnegative Boolean signal, and have finite exact `L-infinity -> L1` norms
-`11/35` and `3/2`.  The sparse example's maximum fiber mass is `2`, not the
-historical page's unsupported `<=1`.  Independent weighted-matrix checks agree.
-Both negative controls are rejected for the intended axiom.
-
+The evidence now goes beyond the original two constructions. The
+necessary-and-sufficient finite-atomic certificate covers every finite
+dimension and every real signal, and 34 exact dense/sparse instances exercise
+it through 16,384 vertices. Both historical negative controls still fail for
+their intended reason. The uncountable measurable-space extension remains a
+stated limitation.
