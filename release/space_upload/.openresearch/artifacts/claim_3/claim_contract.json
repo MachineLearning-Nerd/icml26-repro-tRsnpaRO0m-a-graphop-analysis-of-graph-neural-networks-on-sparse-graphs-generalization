@@ -1,0 +1,20 @@
+{
+  "claim": 3,
+  "verdict": "FALSIFIED",
+  "source": {
+    "paper": "arXiv:2602.08785v1",
+    "anchor": "S4.Thmtheorem1",
+    "appendix_anchor": "A10.Thmtheorem1"
+  },
+  "exact_clause": "The output constant C' depends only on layer count L, Lipschitz bound D, and bofop norm bound r.",
+  "interpretation": "MP_D is the formal class in Section 2.2, which bounds Lipschitz constants but not function offsets or ranges.",
+  "acceptance": [
+    "construct two inputs satisfying BF_d^r exactly",
+    "construct a fixed-dimension MP_D family with unbounded offset M",
+    "bound the fixed input action distance independently of M",
+    "derive a violation for every finite proposed C'",
+    "independently reconstruct assumptions",
+    "show an added offset bound rejects the family"
+  ]
+}
+

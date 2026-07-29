@@ -1,0 +1,27 @@
+{
+  "selected_degree": 5,
+  "selected_readout_width": 16,
+  "train_rows": 1000,
+  "validation_rows": 400,
+  "test_rows": 800,
+  "held_out_test": {
+    "rows": 800,
+    "maximum_error_all_targets": 0.034723199005,
+    "targets": [
+      {"target": 1, "max_abs_error": 0.001970859106, "rmse": 0.000328387634},
+      {"target": 2, "max_abs_error": 0.001554180832, "rmse": 0.000284124629},
+      {"target": 3, "max_abs_error": 0.034723199005, "rmse": 0.005897992028}
+    ],
+    "per_family_maximum_error": {
+      "path": 0.026405659041,
+      "cycle": 0.031375343431,
+      "circulant4": 0.013741573117,
+      "chorded_cycle": 0.014746455045,
+      "star": 0.034723199005
+    }
+  },
+  "continuum_first_knot_count": 32,
+  "continuum_final_maximum_error": 0.000305914799,
+  "independent_first_knot_count": 17,
+  "independent_final_maximum_error": 0.000298788459
+}

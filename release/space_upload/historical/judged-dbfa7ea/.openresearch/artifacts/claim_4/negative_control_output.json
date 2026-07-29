@@ -1,0 +1,9 @@
+{
+  "id": "mutate_depth_from_zero_to_one",
+  "mutated_depth": 1,
+  "same_construction_neighbor_mass": "0",
+  "target_neighbor_mass": "1",
+  "certificate_rejected": true,
+  "reason": "At depth 1, A=0 forces the neighbor measure to have mass 0."
+}
+

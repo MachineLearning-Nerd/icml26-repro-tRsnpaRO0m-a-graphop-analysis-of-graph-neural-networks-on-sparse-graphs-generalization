@@ -1,0 +1,15 @@
+{
+  "claim": 6,
+  "verdict": "FALSIFIED",
+  "source": {"paper": "arXiv:2602.08785v1", "section_anchor": "S6.SS2", "formal_anchor": "A13.Thmtheorem5"},
+  "statement": "For MPNN models in MP_D, the uniform empirical-to-statistical risk gap vanishes as sample size grows.",
+  "acceptance": [
+    "use fixed valid bofop inputs and a fixed iid distribution",
+    "keep L,D,r and dimensions fixed",
+    "use the exact formal MP_D class",
+    "derive the supremum risk gap and exact bad-event probability",
+    "independently recompute binomial probabilities",
+    "show a missing uniform offset envelope blocks the counterexample"
+  ]
+}
+

@@ -1,0 +1,9 @@
+{
+  "id": "add_missing_initial_offset_bound",
+  "added_assumption": "|phi_0(0)|<=1",
+  "proposed_M": "9",
+  "allowed_maximum": "1",
+  "counterexample_rejected": true,
+  "reason": "The missing offset/range bound blocks the unbounded family."
+}
+

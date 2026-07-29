@@ -1,0 +1,10 @@
+[project]
+name = "graphop-reproduction"
+version = "0.1.0"
+description = "Exact and independently checked claim contracts for arXiv:2602.08785"
+requires-python = ">=3.12,<3.13"
+dependencies = []
+
+[tool.uv]
+package = false
+

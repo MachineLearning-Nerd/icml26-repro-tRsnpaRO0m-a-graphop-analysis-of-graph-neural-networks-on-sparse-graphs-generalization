@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "claim": 4,
+  "source_statement": {
+    "anchor": "S5.Thmtheorem3",
+    "L_quantifier": "for every L in N0",
+    "r_quantifier": "for every r > 0",
+    "assertion": "Gamma_L(BF_d^r) is a compact strict subset of P(H^L)"
+  },
+  "universal_counterexample": {
+    "instantiated_depth": 0,
+    "feature_dimension": "arbitrary d in N0",
+    "omega": "H0=[-1,1]^d",
+    "measure": "arbitrary pi in P(H0)",
+    "operator": "A=0",
+    "operator_norm": "0",
+    "signal": "f=id_H0",
+    "gamma_0": "gamma_0=f=id_H0",
+    "Gamma_0": "(id_H0)_* pi = pi"
+  },
+  "finite_sanity": {
+    "feature_dimension": 1,
+    "feature_grid": ["-1", "0", "1"],
+    "probability_denominator": 4,
+    "expected_measure_count": 15
+  },
+  "negative_control": {
+    "id": "mutate_depth_from_zero_to_one",
+    "mutated_depth": 1,
+    "target_depth_one_neighbor_mass": "1",
+    "expected": "reject the same zero-operator construction"
+  }
+}
+

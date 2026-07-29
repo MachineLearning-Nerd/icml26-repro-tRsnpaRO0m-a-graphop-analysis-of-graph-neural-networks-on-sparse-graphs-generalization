@@ -8,6 +8,11 @@ from fractions import Fraction
 from pathlib import Path
 from typing import Any
 
+from graphop_repro.finite_atomic import (
+    finite_atomic_certificate,
+    run_family_sweeps,
+)
+
 
 def _f(value: str | int) -> Fraction:
     return Fraction(value)
@@ -131,13 +136,19 @@ def verify(raw_path: Path) -> dict[str, Any]:
     raw = json.loads(raw_path.read_text(encoding="utf-8"))
     cases = [_finite_case(case) for case in raw["cases"]]
     controls = [_unbounded_control(control) for control in raw["negative_controls"]]
+    certificate = finite_atomic_certificate()
+    family_sweeps = run_family_sweeps(raw["family_sweeps"])
     assert all(case["bofop"] for case in cases)
     assert all(control["graphop"] and not control["bofop"] for control in controls)
+    assert certificate["machine_checked"]
+    assert all(family["all_bofops"] for family in family_sweeps)
     return {
         "claim": 2,
         "status": "VERIFIED",
         "arithmetic": "fractions.Fraction (exact rational)",
+        "scope": "parameterized finite-atomic theorem plus graph-family sweeps",
+        "finite_atomic_fiber_and_norm_certificate": certificate,
+        "family_sweeps": family_sweeps,
         "cases": cases,
         "negative_controls": controls,
     }
-

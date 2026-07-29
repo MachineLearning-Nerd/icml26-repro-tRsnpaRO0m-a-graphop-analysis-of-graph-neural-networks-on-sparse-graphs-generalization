@@ -1,27 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" role="img" aria-labelledby="title desc">
-  <title id="title">Dense and sparse graphop certificates</title>
-  <desc id="desc">A dense three-cell step graphon and sparse four-node path both satisfy exact graphop axioms.</desc>
-  <rect width="1200" height="520" fill="#fbfbf8"/>
-  <text x="55" y="58" font-family="sans-serif" font-size="32" font-weight="700" fill="#17212b">One operator language, two exact constructions</text>
-  <rect x="55" y="105" width="500" height="320" rx="18" fill="#e8f0fa" stroke="#3b6ea8" stroke-width="2"/>
-  <text x="85" y="150" font-family="sans-serif" font-size="24" font-weight="700" fill="#244f80">Dense 3-cell step graphon</text>
-  <g fill="#578cc4" stroke="#fff" stroke-width="3">
-    <rect x="110" y="190" width="70" height="70"/><rect x="180" y="190" width="70" height="70" opacity=".82"/><rect x="250" y="190" width="70" height="70" opacity=".66"/>
-    <rect x="110" y="260" width="70" height="70" opacity=".82"/><rect x="180" y="260" width="70" height="70" opacity=".72"/><rect x="250" y="260" width="70" height="70" opacity=".55"/>
-    <rect x="110" y="330" width="70" height="70" opacity=".66"/><rect x="180" y="330" width="70" height="70" opacity=".55"/><rect x="250" y="330" width="70" height="70" opacity=".75"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="530" viewBox="0 0 1200 530" role="img" aria-labelledby="title desc">
+  <title id="title">Scale and coverage of the finite graphop and bofop certificates</title>
+  <desc id="desc">Six graph families cover thirty-four instances through sixteen thousand three hundred eighty-four vertices.</desc>
+  <rect width="1200" height="530" fill="#fbfbf8"/>
+  <text x="55" y="58" font-family="sans-serif" font-size="32" font-weight="700" fill="#17212b">Parameterized certificate, exercised across six families</text>
+  <g font-family="sans-serif" font-size="18">
+    <text x="70" y="115" fill="#455565">dense step graphons</text><rect x="330" y="91" width="270" height="30" rx="5" fill="#4f83bd"/><text x="620" y="114" fill="#244f80">4 instances · n≤256</text>
+    <text x="70" y="175" fill="#455565">paths</text><rect x="330" y="151" width="700" height="30" rx="5" fill="#31835a"/><text x="1050" y="174" fill="#215f40">7 · n≤16,384</text>
+    <text x="70" y="235" fill="#455565">weighted cycles</text><rect x="330" y="211" width="610" height="30" rx="5" fill="#3f9368"/><text x="960" y="234" fill="#215f40">6 · n≤8,192</text>
+    <text x="70" y="295" fill="#455565">degree-four circulants</text><rect x="330" y="271" width="610" height="30" rx="5" fill="#55a579"/><text x="960" y="294" fill="#215f40">6 · n≤8,192</text>
+    <text x="70" y="355" fill="#455565">stars</text><rect x="330" y="331" width="530" height="30" rx="5" fill="#72b58e"/><text x="880" y="354" fill="#215f40">6 · n≤4,096</text>
+    <text x="70" y="415" fill="#455565">nonuniform reversible chains</text><rect x="330" y="391" width="430" height="30" rx="5" fill="#8cc2a0"/><text x="780" y="414" fill="#215f40">5 · n≤1,024</text>
   </g>
-  <text x="355" y="215" font-family="monospace" font-size="18" fill="#244f80">729 adjoint pairs</text>
-  <text x="355" y="252" font-family="monospace" font-size="18" fill="#244f80">8 positive signals</text>
-  <text x="355" y="289" font-family="monospace" font-size="18" fill="#244f80">residual = 0</text>
-  <text x="355" y="326" font-family="monospace" font-size="18" fill="#244f80">norm = 11/35</text>
-  <text x="355" y="378" font-family="sans-serif" font-size="24" font-weight="700" fill="#155a3b">GRAPHOP ✓</text>
-  <rect x="645" y="105" width="500" height="320" rx="18" fill="#e7f3ea" stroke="#37855b" stroke-width="2"/>
-  <text x="675" y="150" font-family="sans-serif" font-size="24" font-weight="700" fill="#215f40">Sparse path P4</text>
-  <g stroke="#2c7a52" stroke-width="8"><line x1="715" y1="260" x2="805" y2="260"/><line x1="805" y1="260" x2="895" y2="260"/><line x1="895" y1="260" x2="985" y2="260"/></g>
-  <g fill="#fff" stroke="#2c7a52" stroke-width="6"><circle cx="715" cy="260" r="24"/><circle cx="805" cy="260" r="24"/><circle cx="895" cy="260" r="24"/><circle cx="985" cy="260" r="24"/></g>
-  <text x="690" y="320" font-family="monospace" font-size="18" fill="#215f40">fiber mass: 1, 2, 2, 1</text>
-  <text x="690" y="355" font-family="monospace" font-size="18" fill="#215f40">residual = 0 · norm = 3/2</text>
-  <text x="690" y="395" font-family="sans-serif" font-size="24" font-weight="700" fill="#155a3b">GRAPHOP + BOFOP ✓</text>
-  <text x="55" y="470" font-family="sans-serif" font-size="18" fill="#455565">Controls: asymmetric positive operator fails self-adjointness; symmetric negative edge fails positivity.</text>
-  <text x="55" y="500" font-family="sans-serif" font-size="18" fill="#455565">A countable graphop with unbounded fibers is correctly rejected as a bofop.</text>
+  <rect x="55" y="455" width="1090" height="52" rx="10" fill="#e8f0fa"/>
+  <text x="80" y="489" font-family="sans-serif" font-size="20" font-weight="700" fill="#244f80">34 instances · 448,593,904 operator cells · exact rational arithmetic · every norm identity passes</text>
 </svg>
