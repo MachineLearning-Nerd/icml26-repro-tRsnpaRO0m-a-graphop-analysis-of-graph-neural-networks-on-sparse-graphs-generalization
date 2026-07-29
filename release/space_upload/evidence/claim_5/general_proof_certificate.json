@@ -1,0 +1,133 @@
+{
+  "schema_version": 1,
+  "claim": 5,
+  "theorem": "Uniform density of scalar L-layer MPNNs on the realizable order-L DIDM quotient",
+  "quantifiers": "For every L in N_0, every r>0, every continuous g on K=Gamma_L(BF_d^r), and every epsilon>0",
+  "hypotheses": [
+    "fixed_depth(L)",
+    "positive_bound(r)",
+    "compact_metric(K)",
+    "continuous_target(g,K)",
+    "positive(epsilon)"
+  ],
+  "trusted_foundation": [
+    {
+      "id": "base_coordinate_separation",
+      "premises": [
+        "fixed_depth(L)"
+      ],
+      "conclusion": "depth_zero_observables_separate_distinct_base_features",
+      "statement": "At depth zero the DIDM state is the base feature; a coordinate projection separates any two distinct feature vectors and is a zero-layer MPNN readout.",
+      "source": "Definition in arXiv:2602.08785v1: depth-zero DIDM and MPNN recursion"
+    },
+    {
+      "id": "measure_separation",
+      "premises": [
+        "compact_metric(K)"
+      ],
+      "conclusion": "distinct_finite_measures_have_continuous_integral_separator",
+      "statement": "On a compact metric space, distinct finite regular Borel measures define distinct continuous linear functionals, so some continuous test has different integrals.",
+      "source": "Rudin, Functional Analysis: Riesz representation and separation of regular Borel measures"
+    },
+    {
+      "id": "recursive_mpnn_separation",
+      "premises": [
+        "fixed_depth(L)",
+        "depth_zero_observables_separate_distinct_base_features",
+        "distinct_finite_measures_have_continuous_integral_separator"
+      ],
+      "conclusion": "scalar_L_layer_MPNN_observables_separate_DIDM_points",
+      "statement": "Induct on depth. Two unequal descriptors differ in the previous descriptor or in their neighbor measure. The first case uses the induction separator. In the second, Riesz supplies a continuous previous-depth test; uniform approximation by the induction algebra preserves a nonzero integral gap, and one message-integral/update layer realizes that separator. Applying the same measure-separation argument to the final node distribution and mean pooling separates unequal DIDMs.",
+      "source": "Definition in arXiv:2602.08785v1: DIDM recursion and message/update/readout operations; the induction is reconstructed in this certificate"
+    },
+    {
+      "id": "parallel_algebra_closure",
+      "premises": [
+        "fixed_depth(L)"
+      ],
+      "conclusion": "MPNN_uniform_closure_is_unital_subalgebra",
+      "statement": "A constant channel gives the unit; concatenating two same-depth networks gives sums; concatenation followed by a continuous multiplication readout gives products. Uniform limits preserve the algebra operations.",
+      "source": "Standard: parallel composition of finite-dimensional message-passing channels"
+    },
+    {
+      "id": "stone_weierstrass",
+      "premises": [
+        "compact_metric(K)",
+        "MPNN_uniform_closure_is_unital_subalgebra",
+        "scalar_L_layer_MPNN_observables_separate_DIDM_points"
+      ],
+      "conclusion": "MPNN_uniform_closure_equals_C(K)",
+      "statement": "The real Stone-Weierstrass theorem makes every unital point-separating subalgebra uniformly dense in C(K).",
+      "source": "Standard: real Stone-Weierstrass theorem on compact Hausdorff spaces"
+    },
+    {
+      "id": "unpack_uniform_closure",
+      "premises": [
+        "MPNN_uniform_closure_equals_C(K)",
+        "continuous_target(g,K)",
+        "positive(epsilon)"
+      ],
+      "conclusion": "exists_scalar_L_layer_MPNN_with_uniform_error_below_epsilon",
+      "statement": "Membership of g in the uniform closure means that for every positive epsilon there is an L-layer scalar MPNN F with sup over K of |F-g| below epsilon.",
+      "source": "Standard: definition of closure in the uniform norm"
+    }
+  ],
+  "steps": [
+    {
+      "lemma": "base_coordinate_separation",
+      "premises": [
+        "fixed_depth(L)"
+      ],
+      "conclusion": "depth_zero_observables_separate_distinct_base_features"
+    },
+    {
+      "lemma": "measure_separation",
+      "premises": [
+        "compact_metric(K)"
+      ],
+      "conclusion": "distinct_finite_measures_have_continuous_integral_separator"
+    },
+    {
+      "lemma": "recursive_mpnn_separation",
+      "premises": [
+        "fixed_depth(L)",
+        "depth_zero_observables_separate_distinct_base_features",
+        "distinct_finite_measures_have_continuous_integral_separator"
+      ],
+      "conclusion": "scalar_L_layer_MPNN_observables_separate_DIDM_points"
+    },
+    {
+      "lemma": "parallel_algebra_closure",
+      "premises": [
+        "fixed_depth(L)"
+      ],
+      "conclusion": "MPNN_uniform_closure_is_unital_subalgebra"
+    },
+    {
+      "lemma": "stone_weierstrass",
+      "premises": [
+        "compact_metric(K)",
+        "MPNN_uniform_closure_is_unital_subalgebra",
+        "scalar_L_layer_MPNN_observables_separate_DIDM_points"
+      ],
+      "conclusion": "MPNN_uniform_closure_equals_C(K)"
+    },
+    {
+      "lemma": "unpack_uniform_closure",
+      "premises": [
+        "MPNN_uniform_closure_equals_C(K)",
+        "continuous_target(g,K)",
+        "positive(epsilon)"
+      ],
+      "conclusion": "exists_scalar_L_layer_MPNN_with_uniform_error_below_epsilon"
+    }
+  ],
+  "target": "exists_scalar_L_layer_MPNN_with_uniform_error_below_epsilon",
+  "essential_lemmas": [
+    "measure_separation",
+    "recursive_mpnn_separation",
+    "parallel_algebra_closure",
+    "stone_weierstrass"
+  ],
+  "limitations": "The certificate treats compactness of the realizable DIDM image as a hypothesis because Claim 4's compactness clause was not contradicted; it independently reconstructs separation and density and does not assume the paper's Theorem E.12 or M.1. Its trusted boundary is Riesz representation and real Stone-Weierstrass."
+}

@@ -2,12 +2,22 @@
 
 Three materially different routes are checked.
 
-## 1. General topological restriction
+## 1. General density certificate
 
-For arbitrary `L`, let `K=Gamma_L(BF_d^r)`. The checker validates the source
-anchors for Theorems E.12, L.2, and M.1, then reconstructs the Tietze
-restriction argument on the correctly typed domain. The false proper-subset
-clause is unused.
+For arbitrary `L`, let `K=Gamma_L(BF_d^r)`. At depth zero, coordinate
+projections separate features. Inductively, unequal descriptors differ either
+in their previous descriptor or neighbor measure. Riesz separation supplies a
+continuous test for the measure case; the induction algebra approximates that
+test while preserving a nonzero integral gap, and one message/update layer
+realizes it. The same argument after node-distribution pooling separates
+distinct DIDMs.
+
+Parallel channel concatenation gives constants and sums, while a continuous
+multiplication readout gives products. Thus the uniform closure is a unital
+point-separating algebra. Real Stone-Weierstrass makes it all of `C(K)`, which
+unpacks to the paper's `for every g, epsilon` conclusion. The certificate uses
+compactness as a stated hypothesis but assumes neither Theorem E.12 nor M.1.
+Two independent kernels check reachability and the trust boundary.
 
 ## 2. Constructive continuum
 

@@ -1,0 +1,59 @@
+{
+  "dataset": "ICML-2026-agent-repro/verdicts",
+  "dataset_revision": "c0a8b6e8525730a6fd09114172887080841ffbe3",
+  "dataset_file_sha256": "1a5eaf0cf1955e56bc9f9b798e626f916742917a5781bd8a8789bb7f090eef9b",
+  "retrieved_at": "2026-07-29T05:42:00+05:30",
+  "filter": {
+    "field": "space_id",
+    "equals": "DineshAI/tRsnpaRO0m",
+    "matches": 1
+  },
+  "record": {
+    "space_id": "DineshAI/tRsnpaRO0m",
+    "orid": "tRsnpaRO0m",
+    "sha": "dbfa7ea0de058ad35fa8bab58684306bd9ac7e7c",
+    "judged_at": "2026-07-28T18:54:48+00:00",
+    "model": "zai-org/GLM-5.2",
+    "quality": "medium",
+    "derived_score": "8/12",
+    "claims": [
+      {
+        "claim": 1,
+        "verdict": "toy",
+        "points": 1,
+        "judge_reason": "Exact dense three-cell and sparse P4 constructions were real but too small to demonstrate the general framework."
+      },
+      {
+        "claim": 2,
+        "verdict": "toy",
+        "points": 1,
+        "judge_reason": "The concrete P4 fiber calculation and countable control were valid but judged small-scale."
+      },
+      {
+        "claim": 3,
+        "verdict": "falsified",
+        "points": 2,
+        "judge_reason": "The unbounded-offset singleton counterexample contradicts the displayed formal MP_D statement, subject to acknowledged prose-interpretation risk."
+      },
+      {
+        "claim": 4,
+        "verdict": "falsified",
+        "points": 2,
+        "judge_reason": "The allowed L=0 case contradicts the universally quantified strict-subset clause."
+      },
+      {
+        "claim": 5,
+        "verdict": "inconclusive",
+        "points": 0,
+        "judge_reason": "The proof reconstruction had no actual MPNN evaluation, graph data, or measured approximation errors."
+      },
+      {
+        "claim": 6,
+        "verdict": "falsified",
+        "points": 2,
+        "judge_reason": "The exact two-point counterexample gives an unbounded uniform gap on sample imbalance, with the same formal-versus-prose risk as Claim 3."
+      }
+    ],
+    "overall": "Claims 1 and 2 received toy credit; Claims 3, 4, and 6 received full falsification credit; Claim 5 was inconclusive because it lacked an actual MPNN experiment."
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "dataset": "ICML-2026-agent-repro/verdicts",
+  "dataset_revision": "e7f9453b90343c8d000ff631b551a10a8853eb27",
+  "dataset_file_sha256": "36e472f65b7bf79725d92769fd8aaef14f3f7d9e47891e8d20ba49328e135157",
+  "retrieved_at": "2026-07-29T06:30:00+05:30",
+  "filter": {
+    "field": "space_id",
+    "equals": "DineshAI/tRsnpaRO0m",
+    "matches": 1
+  },
+  "record": {
+    "space_id": "DineshAI/tRsnpaRO0m",
+    "orid": "tRsnpaRO0m",
+    "sha": "3ed60dc4ac62b111cb7ca0ef7c752586a10aa8b5",
+    "judged_at": "2026-07-29T00:41:37+00:00",
+    "model": "zai-org/GLM-5.2",
+    "quality": "medium",
+    "derived_score": "9/12",
+    "claims": [
+      {
+        "claim": 1,
+        "verdict": "toy",
+        "points": 1,
+        "judge_reason": "Finite-atomic verification was rigorous, but the arbitrary uncountable probability-space extension was derived mathematically rather than mechanized."
+      },
+      {
+        "claim": 2,
+        "verdict": "toy",
+        "points": 1,
+        "judge_reason": "Finite fibers and the countable control were rigorous, but measurable-kernel existence on arbitrary uncountable Borel spaces was not mechanized."
+      },
+      {
+        "claim": 3,
+        "verdict": "falsified",
+        "points": 2,
+        "judge_reason": "The unbounded-offset singleton construction contradicts the displayed formal MP_D theorem."
+      },
+      {
+        "claim": 4,
+        "verdict": "falsified",
+        "points": 2,
+        "judge_reason": "The allowed L=0 case contradicts the universal strict-subset clause."
+      },
+      {
+        "claim": 5,
+        "verdict": "toy",
+        "points": 1,
+        "judge_reason": "The actual two-layer benchmark and continuum were substantive, but selected targets and graph families do not establish every continuous target; the general route accepted Theorem E.12."
+      },
+      {
+        "claim": 6,
+        "verdict": "falsified",
+        "points": 2,
+        "judge_reason": "The exact two-point imbalance construction gives an infinite uniform gap."
+      }
+    ],
+    "overall": "Claims 1, 2, and 5 received toy credit because their fully quantified extensions were not independently mechanized; Claims 3, 4, and 6 retained full falsification credit."
+  }
+}

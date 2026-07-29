@@ -2,9 +2,10 @@
 
 Verdict: **VERIFIED**
 
-The evidence now goes beyond the original two constructions. The
-necessary-and-sufficient finite-atomic certificate covers every finite
-dimension and every real signal, and 34 exact dense/sparse instances exercise
-it through 16,384 vertices. Both historical negative controls still fail for
-their intended reason. The uncountable measurable-space extension remains a
-stated limitation.
+The evidence now includes a machine-checked quantified derivation for every
+admissible symmetric nonnegative kernel on an arbitrary probability space.
+Its explicit trust boundary is integral monotonicity, Fubini, and the paper's
+Definition 3.1—not a paper result. A singular two-neighbour graphing on the
+uncountable Lebesgue circle verifies that the common framework includes sparse
+connectivity that has no graphon density. The earlier all-finite certificate,
+34-family sweep, independent checker, and controls remain regressions.

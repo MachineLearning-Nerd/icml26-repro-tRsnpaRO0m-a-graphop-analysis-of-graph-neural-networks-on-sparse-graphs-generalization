@@ -13,16 +13,21 @@
     "graphop": "self_adjoint and positivity_preserving"
   },
   "tested_instances": [
+    "a quantified proof certificate over arbitrary probability spaces and all bounded measurable test pairs",
+    "a singular two-neighbour graphing on the uncountable Lebesgue circle",
     "the original nonnegative symmetric 3-cell step graphon and sparse path P4",
     "34 deterministic instances from six dense, sparse, bounded-degree, unbounded-degree, uniform-measure, and nonuniform reversible families",
     "sizes through 16,384 vertices and 448,593,904 implicitly or explicitly certified operator cells"
   ],
   "proof_scope": {
+    "general_certificate": "Integral monotonicity proves positivity; Fubini and symmetry prove self-adjointness for every admissible kernel. The machine checker exposes these standard measure results as its trust boundary and admits no paper theorem as a premise.",
     "finite_atomic_certificate": "For every finite dimension n, every strictly positive probability vector mu, and every real matrix A, basis witnesses prove self-adjointness iff mu_i A_ij = mu_j A_ji and positivity preservation iff every A_ij is nonnegative.",
     "general_structural_argument": "Coefficient comparison proves sufficiency and basis vectors prove necessity. This is an all-real-signal certificate, not enumeration over a selected grid.",
     "graphon_scope": "The dense family instantiates symmetric nonnegative step kernels. The source audit separately records the Fubini/Tonelli extension to bounded measurable symmetric nonnegative kernels."
   },
   "acceptance": [
+    "the quantified general target is derived by both the primary Horn kernel and an independent premise-graph checker",
+    "the uncountable sparse graphing has two-point singular fibers of mass one and the directed-shift control fails self-adjointness",
     "the necessary-and-sufficient coefficient certificate is machine checked",
     "all family instances satisfy exact detailed balance and entrywise nonnegativity",
     "the exact positive-operator norms are finite",

@@ -1,0 +1,16 @@
+{
+  "all_steps_reachable": true,
+  "allowed_foundation_sources_only": true,
+  "checker": "independent premise-graph reachability and trust-boundary audit",
+  "claim": 5,
+  "essential_lemmas_used": [
+    "measure_separation",
+    "parallel_algebra_closure",
+    "recursive_mpnn_separation",
+    "stone_weierstrass"
+  ],
+  "paper_result_not_assumed": true,
+  "quantifiers": "For every L in N_0, every r>0, every continuous g on K=Gamma_L(BF_d^r), and every epsilon>0",
+  "step_count": 6,
+  "target_derived": true
+}

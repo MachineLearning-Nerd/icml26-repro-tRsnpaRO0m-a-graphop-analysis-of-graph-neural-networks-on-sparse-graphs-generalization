@@ -1,0 +1,29 @@
+{
+  "claim": 5,
+  "verdict": "VERIFIED",
+  "source": {
+    "paper": "arXiv:2602.08785v1",
+    "anchor": "A13.Thmtheorem1",
+    "label": "Theorem M.1"
+  },
+  "statement": {
+    "quantifiers": "For every L in N0, every continuous real target on the order-L bofop-DIDM quotient, and every epsilon>0, there is an L-layer MPNN with uniform error below epsilon.",
+    "domain": "BF_d^r modulo zero order-L DIDM-mover distance",
+    "model": "the paper's MPNN class with continuous Lipschitz updates and readout"
+  },
+  "evidence_routes": [
+    "source-anchored Tietze restriction of the ambient Theorem E.12, using only Theorem L.2 compactness and not its false strict-subset clause",
+    "constructive uniform interpolation for every continuous target on a continuum of bounded-fiber weighted sparse cycles",
+    "actual L=2 MPNN embeddings and trained readouts on held-out bounded-fiber sparse graphs from five families",
+    "an independent piecewise-linear readout construction that imports no primary verifier code"
+  ],
+  "acceptance": [
+    "the held-out maximum error for all three continuous targets is at most 0.04",
+    "the continuum target sweep reaches maximum error at most 0.01",
+    "the independent readout reaches the same 0.04 threshold",
+    "removing message passing and shifting training labels both miss the declared threshold",
+    "a discontinuous-target control is rejected with exact uniform error lower bound 1/2",
+    "every graph has essential-supremum fiber mass at most r=1"
+  ],
+  "non_circularity": "Targets, splits, sweeps, and thresholds are committed inputs. Width is selected by a first-hit sweep rather than a theorem-derived formula."
+}

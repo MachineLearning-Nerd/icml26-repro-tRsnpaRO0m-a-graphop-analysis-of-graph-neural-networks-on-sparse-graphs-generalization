@@ -4,16 +4,19 @@ This project reproduces all six judged claims in *A Graphop Analysis of Graph
 Neural Networks on Sparse Graphs: Generalization and Universal Approximation*
 (arXiv:2602.08785).
 
-The current live judge score is **8/12** at exact Hugging Face revision
-`dbfa7ea0de058ad35fa8bab58684306bd9ac7e7c`. The judge gave Claims 1 and 2
-toy credit, accepted the falsifications of Claims 3, 4, and 6, and found
-Claim 5 inconclusive because it had no actual MPNN experiment.
+The current live judge score is **9/12** at exact Hugging Face revision
+`3ed60dc4ac62b111cb7ca0ef7c752586a10aa8b5`. The judge gave Claims 1, 2, and
+5 toy credit and retained the full-credit falsifications of Claims 3, 4, and
+6.
 
 This revision directly addresses the missing evidence:
 
-- a necessary-and-sufficient graphop/bofop certificate for every finite
-  atomic dimension, exercised on 34 dense and sparse instances through 16,384
-  vertices;
+- quantified arbitrary-space graphop and standard-Borel fiber certificates,
+  plus a singular two-neighbour graphing on the uncountable Lebesgue circle;
+- an independent DIDM-separation and Stone-Weierstrass certificate for every
+  continuous target, without assuming the paper's E.12 or M.1;
+- the existing all-finite graphop/bofop certificate, exercised on 34 dense and
+  sparse instances through 16,384 vertices;
 - an actual two-layer MPNN evaluated on 800 held-out sparse graphs, with
   maximum error `0.034723199005` against a declared `0.04` threshold;
 - a separately implemented readout reaching `0.019023154804`, plus a
@@ -21,7 +24,7 @@ This revision directly addresses the missing evidence:
   controls.
 
 The scientific assessment is **3 VERIFIED and 3 FALSIFIED**. The conservative
-post-change forecast is **10–12/12**, with **12/12** the best-supported
+post-change forecast is **9–12/12**, with **12/12** the best-supported
 possibility—not a live score.
 
 - [Illustrated technical report](reports/reproduction/report.md)
@@ -50,6 +53,7 @@ the jobs exposed 64 logical CPUs.
 | [`orx/formal-mpnn-uniform-generalization-counterexampl`](https://github.com/MachineLearning-Nerd/icml26-repro-tRsnpaRO0m-a-graphop-analysis-of-graph-neural-networks-on-sparse-graphs-generalization/tree/orx/formal-mpnn-uniform-generalization-counterexampl) | Prior 8/12 scientific winner; Claims 3, 4, and 6 counterexamples | `uv run --frozen python -m graphop_repro.run_all` | Claims 3, 4, 6 FALSIFIED; prior finite checks pass | local CPU, single-threaded, 5 s orchestrated |
 | [`orx/general-finite-graphop-and-bofop-certificates`](https://github.com/MachineLearning-Nerd/icml26-repro-tRsnpaRO0m-a-graphop-analysis-of-graph-neural-networks-on-sparse-graphs-generalization/tree/orx/general-finite-graphop-and-bofop-certificates) | Replace four-node-only Claims 1–2 evidence with a parameterized theorem and family sweeps | `uv run --frozen python -m graphop_repro.run_all` | Claims 1–2 VERIFIED across 34 instances; all cumulative checks pass | HF `cpu-upgrade`, one active core, 26 s orchestrated |
 | [`orx/constructive-mpnn-universal-approximation-eviden`](https://github.com/MachineLearning-Nerd/icml26-repro-tRsnpaRO0m-a-graphop-analysis-of-graph-neural-networks-on-sparse-graphs-generalization/tree/orx/constructive-mpnn-universal-approximation-eviden) | Add actual sparse-graph MPNN, independent readout, continuum, and controls for Claim 5 | `uv run --frozen python -m graphop_repro.run_all` | Claim 5 VERIFIED; held-out max `0.034723199005`; all cumulative checks pass | HF `cpu-upgrade`, one active core, 21 s orchestrated |
-| `orx/evaluator-visible-strengthened-evidence-candidat` | Preserve the exact judged tree and expose the strengthened evidence from the canonical Space entrypoint | `uv run --frozen python -m graphop_repro.run_all` | candidate validation and publication gates in progress | HF `cpu-upgrade` formal run pending |
+| [`orx/evaluator-visible-strengthened-evidence-candidat`](https://github.com/MachineLearning-Nerd/icml26-repro-tRsnpaRO0m-a-graphop-analysis-of-graph-neural-networks-on-sparse-graphs-generalization/tree/orx/evaluator-visible-strengthened-evidence-candidat) | Preserve the exact judged tree and expose the strengthened evidence | `uv run --frozen python -m graphop_repro.run_all` | published revision `3ed60dc4...`; live judge improved to 9/12 | HF `cpu-upgrade`, one active core, 27 s orchestrated |
+| `orx/general-probability-space-proof-certificates` | Address the remaining finite/toy scope with quantified symbolic proofs and an uncountable sparse graphing | `uv run --frozen python -m graphop_repro.run_all` | cumulative verifier passes locally; formal release run pending | HF `cpu-upgrade` pending |
 
 Paper: arXiv `2602.08785`; OpenReview `tRsnpaRO0m`.

@@ -1,0 +1,2 @@
+uv run --frozen python -m graphop_repro.run_all
+

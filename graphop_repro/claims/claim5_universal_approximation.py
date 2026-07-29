@@ -14,6 +14,8 @@ import math
 from pathlib import Path
 from typing import Any, Callable
 
+from graphop_repro.general_certificates import verify_general_claim
+
 
 def _edges(family: str, n: int) -> list[tuple[int, int]]:
     if family == "path":
@@ -440,6 +442,7 @@ def verify(raw_path: Path) -> dict[str, Any]:
 
     continuum = _continuum_certificate(raw["continuum_certificate"])
     proof = _proof_certificate(raw)
+    general = verify_general_claim(5)
     return {
         "claim": 5,
         "status": "VERIFIED",
@@ -449,6 +452,7 @@ def verify(raw_path: Path) -> dict[str, Any]:
             "experimental": "bounded-fiber sparse graphs from five families",
         },
         "proof_certificate": proof,
+        "independent_general_density_certificate": general,
         "constructive_continuum_certificate": continuum,
         "benchmark": {
             "mpnn_architecture": (

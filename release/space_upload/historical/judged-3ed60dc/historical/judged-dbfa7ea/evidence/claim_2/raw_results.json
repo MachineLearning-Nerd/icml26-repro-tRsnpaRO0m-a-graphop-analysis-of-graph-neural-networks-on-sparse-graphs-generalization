@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "claim": 2,
+  "arithmetic": "exact rational strings",
+  "seed": null,
+  "cases": [
+    {
+      "id": "sparse_path_p4",
+      "measure": ["1/4", "1/4", "1/4", "1/4"],
+      "operator_matrix": [
+        ["0", "1", "0", "0"],
+        ["1", "0", "1", "0"],
+        ["0", "1", "0", "1"],
+        ["0", "0", "1", "0"]
+      ],
+      "fiber_atoms": [
+        ["0", "1", "0", "0"],
+        ["1", "0", "1", "0"],
+        ["0", "1", "0", "1"],
+        ["0", "0", "1", "0"]
+      ],
+      "expected": {
+        "signals_checked": 625,
+        "fiber_masses": ["1", "2", "2", "1"],
+        "norm": "2"
+      }
+    }
+  ],
+  "negative_controls": [
+    {
+      "id": "countable_diagonal_unbounded_fibers",
+      "space": "positive integers",
+      "measure_formula": "mu({n})=2^-n",
+      "operator_formula": "(Af)(n)=n f(n)",
+      "fiber_formula": "nu_n=n delta_n",
+      "horizons": [4, 8, 16, 32, 64],
+      "expected_graphop_norm": "2",
+      "expected_essential_supremum": "infinity",
+      "expected_bofop": false
+    }
+  ]
+}
+

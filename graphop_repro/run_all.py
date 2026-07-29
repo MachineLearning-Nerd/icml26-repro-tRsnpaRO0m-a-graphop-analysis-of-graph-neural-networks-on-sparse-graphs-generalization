@@ -27,6 +27,9 @@ from graphop_repro.independent.claim3_checker import check as check_claim_3
 from graphop_repro.independent.claim4_checker import check as check_claim_4
 from graphop_repro.independent.claim5_checker import check as check_claim_5
 from graphop_repro.independent.claim6_checker import check as check_claim_6
+from graphop_repro.independent.general_certificate_checker import (
+    check_general_claim,
+)
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -111,6 +114,9 @@ def main() -> int:
     raw_path_6 = ROOT / ".openresearch/artifacts/claim_6/raw_results.json"
     primary_6 = verify_claim_6(raw_path_6)
     independent_6 = check_claim_6(raw_path_6)
+    general_independent = {
+        claim: check_general_claim(claim) for claim in (1, 2, 5)
+    }
 
     expected_checker = json.loads(
         (ROOT / ".openresearch/artifacts/claim_1/checker_output.json").read_text(
@@ -199,6 +205,14 @@ def main() -> int:
         )
     )
     assert primary_6["negative_control"] == expected_control_6
+    for claim, output in general_independent.items():
+        expected_general = json.loads(
+            (
+                ROOT
+                / f".openresearch/artifacts/claim_{claim}/general_checker_output.json"
+            ).read_text(encoding="utf-8")
+        )
+        assert output == expected_general
 
     wall_seconds = time.perf_counter() - started
     cpu_seconds = time.process_time() - cpu_started
@@ -244,12 +258,14 @@ def main() -> int:
                 "status": primary["status"],
                 "primary": primary,
                 "independent": independent,
+                "general_independent": general_independent[1],
             },
             {
                 "claim": 2,
                 "status": primary_2["status"],
                 "primary": primary_2,
                 "independent": independent_2,
+                "general_independent": general_independent[2],
             },
             {
                 "claim": 3,
@@ -268,6 +284,7 @@ def main() -> int:
                 "status": primary_5["status"],
                 "primary": primary_5,
                 "independent": independent_5,
+                "general_independent": general_independent[5],
             },
             {
                 "claim": 6,

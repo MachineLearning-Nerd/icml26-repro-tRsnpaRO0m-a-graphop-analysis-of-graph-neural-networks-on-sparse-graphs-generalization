@@ -14,6 +14,9 @@ maximum error `0.005124094487` at 32 knots and `0.000305914799` at 128 knots
 over 8,193 evaluation points. The depth-zero, shifted-label, and discontinuous
 controls fail for their intended reasons.
 
-These numerical routes corroborate rather than replace the exact general
-argument: Tietze restriction of Theorem E.12 from the ambient DIDM space to
-the compact realizable image supplied by Theorem L.2.
+These numerical routes now accompany an independent quantified density proof.
+The new certificate derives point separation by induction over the DIDM
+recursion, verifies constants/sums/products by parallel MPNN composition, and
+applies real Stone-Weierstrass on the compact realizable image. It does not
+assume Theorem E.12 or M.1. Removing Riesz separation, the recursive
+separator, algebra closure, or Stone-Weierstrass makes the proof fail.

@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "title": "Graphop Analysis of GNNs (tRsnpaRO0m)",
+  "emoji": "🎯",
+  "space_id": "DineshAI/tRsnpaRO0m",
+  "paper": "arXiv:2602.08785v1",
+  "tags": [
+    "icml2026-repro",
+    "paper-tRsnpaRO0m"
+  ],
+  "updated_at": "2026-07-29T06:00:00+05:30",
+  "root": {
+    "slug": "current",
+    "title": "Current verification — 3 VERIFIED, 3 FALSIFIED",
+    "file": "pages/current/index.md",
+    "children": [
+      {
+        "slug": "claim-1",
+        "title": "Claim 1 — graphop axioms — VERIFIED",
+        "file": "pages/claims/claim-1.md",
+        "children": []
+      },
+      {
+        "slug": "claim-2",
+        "title": "Claim 2 — bounded fibers — VERIFIED",
+        "file": "pages/claims/claim-2.md",
+        "children": []
+      },
+      {
+        "slug": "claim-3",
+        "title": "Claim 3 — uniform constant — FALSIFIED",
+        "file": "pages/claims/claim-3.md",
+        "children": []
+      },
+      {
+        "slug": "claim-4",
+        "title": "Claim 4 — strict subset at L=0 — FALSIFIED",
+        "file": "pages/claims/claim-4.md",
+        "children": []
+      },
+      {
+        "slug": "claim-5",
+        "title": "Claim 5 — universal approximation — VERIFIED",
+        "file": "pages/claims/claim-5.md",
+        "children": []
+      },
+      {
+        "slug": "claim-6",
+        "title": "Claim 6 — uniform generalization — FALSIFIED",
+        "file": "pages/claims/claim-6.md",
+        "children": []
+      },
+      {
+        "slug": "release-report",
+        "title": "Release report and score forecast",
+        "file": "pages/current/release-report.md",
+        "children": []
+      },
+      {
+        "slug": "blind-review",
+        "title": "Evaluator-blind review",
+        "file": "pages/current/blind-review.md",
+        "children": []
+      },
+      {
+        "slug": "command-ledger",
+        "title": "Command ledger",
+        "file": "pages/current/command-ledger.md",
+        "children": []
+      },
+      {
+        "slug": "historical-judged-8-of-12",
+        "title": "Historical judged 8/12 revision — superseded",
+        "file": "historical/judged-dbfa7ea/INDEX.md",
+        "children": []
+      },
+      {
+        "slug": "historical-rejected-baseline",
+        "title": "Historical rejected baseline",
+        "file": "pages/index.md",
+        "children": [
+          {
+            "slug": "overview",
+            "title": "Historical rejected baseline — unsupported overview",
+            "file": "pages/overview/page.md",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  "agent_view_tokens": 372,
+  "revision": "release-candidate"
+}

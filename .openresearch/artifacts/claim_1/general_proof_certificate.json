@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "claim": 1,
+  "theorem": "General graphon-to-graphop inclusion",
+  "quantifiers": "For every probability space (Omega,mu), every jointly measurable symmetric nonnegative kernel W for which the displayed integral operator is bounded L-infinity to L-one, and every bounded measurable test pair u,v",
+  "hypotheses": [
+    "probability_space(Omega,mu)",
+    "jointly_measurable(W)",
+    "nonnegative(W)",
+    "symmetric_ae(W)",
+    "bounded_Linf_to_L1(A_W)"
+  ],
+  "trusted_foundation": [
+    {
+      "id": "positive_integral",
+      "premises": [
+        "nonnegative(W)"
+      ],
+      "conclusion": "positivity_preserving(A_W)",
+      "statement": "If W is nonnegative almost everywhere and f is nonnegative almost everywhere, then the Lebesgue integral defining A_W f is nonnegative almost everywhere.",
+      "source": "Standard: monotonicity of the Lebesgue integral"
+    },
+    {
+      "id": "fubini_bilinear",
+      "premises": [
+        "probability_space(Omega,mu)",
+        "jointly_measurable(W)",
+        "bounded_Linf_to_L1(A_W)"
+      ],
+      "conclusion": "bilinear_form_equals_double_integral(A_W,W)",
+      "statement": "For bounded u,v, the pairing integral u(x)W(x,y)v(y)dmu(x)dmu(y) is integrable and Fubini identifies it with both iterated forms.",
+      "source": "Bogachev, Measure Theory: Fubini theorem for integrable functions"
+    },
+    {
+      "id": "symmetric_swap",
+      "premises": [
+        "bilinear_form_equals_double_integral(A_W,W)",
+        "symmetric_ae(W)"
+      ],
+      "conclusion": "self_adjoint(A_W)",
+      "statement": "Swap x and y in the product integral and use W(x,y)=W(y,x) almost everywhere to obtain <u,A_W v>=<v,A_W u> for every bounded u,v.",
+      "source": "Standard: product-measure coordinate swap and equality almost everywhere"
+    },
+    {
+      "id": "graphop_definition",
+      "premises": [
+        "bounded_Linf_to_L1(A_W)",
+        "positivity_preserving(A_W)",
+        "self_adjoint(A_W)"
+      ],
+      "conclusion": "graphop(A_W)",
+      "statement": "A graphop is a bounded L-infinity to L-one P-operator that is positivity preserving and self-adjoint under the displayed bilinear pairing.",
+      "source": "Definition in arXiv:2602.08785v1, Definition 3.1, anchor S3.Thmtheorem1"
+    }
+  ],
+  "steps": [
+    {
+      "lemma": "positive_integral",
+      "premises": [
+        "nonnegative(W)"
+      ],
+      "conclusion": "positivity_preserving(A_W)"
+    },
+    {
+      "lemma": "fubini_bilinear",
+      "premises": [
+        "probability_space(Omega,mu)",
+        "jointly_measurable(W)",
+        "bounded_Linf_to_L1(A_W)"
+      ],
+      "conclusion": "bilinear_form_equals_double_integral(A_W,W)"
+    },
+    {
+      "lemma": "symmetric_swap",
+      "premises": [
+        "bilinear_form_equals_double_integral(A_W,W)",
+        "symmetric_ae(W)"
+      ],
+      "conclusion": "self_adjoint(A_W)"
+    },
+    {
+      "lemma": "graphop_definition",
+      "premises": [
+        "bounded_Linf_to_L1(A_W)",
+        "positivity_preserving(A_W)",
+        "self_adjoint(A_W)"
+      ],
+      "conclusion": "graphop(A_W)"
+    }
+  ],
+  "target": "graphop(A_W)",
+  "essential_lemmas": [
+    "positive_integral",
+    "fubini_bilinear",
+    "symmetric_swap",
+    "graphop_definition"
+  ],
+  "limitations": "The certificate exposes Fubini and integral monotonicity as its standard measure-theory trust boundary. It does not reduce Lebesgue integration to set theory."
+}

@@ -2,9 +2,11 @@
 
 Verdict: **VERIFIED**
 
-For every finite atomic operator satisfying positivity and detailed balance,
-the certificate proves unique fibers and equality of all three norm
-quantities. The 34-instance family sweep includes uniform and nonuniform
-measures through 16,384 vertices. The countable diagonal control remains a
-bounded graphop but not a bofop, showing that the verifier distinguishes the
-two definitions.
+The current proof certificate covers every standard Borel probability space.
+It reconstructs the joint measure from the positive bilinear form, applies
+Caratheodory extension and Borel disintegration, proves uniqueness with a
+countable generating class, and derives both norm identities from positivity,
+duality, and self-adjointness. Theorem 3.3 is not a trusted premise. A singular
+two-neighbour graphing on the uncountable circle supplies a concrete sparse
+case; the finite family sweep and countable unbounded control remain
+regressions.
